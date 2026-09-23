@@ -1,1 +1,1918 @@
-{}
+{
+  "schema_version": 1,
+  "generated_date": "2026-09-23",
+  "source": "canonical local release records plus verified live WordPress media inventory",
+  "defaults": {
+    "site_name": "Kieran Simkin",
+    "locale": "en_GB"
+  },
+  "records": [
+    {
+      "post_id": 839,
+      "page_url": "https://kieransimkin.co.uk/california-screamin/",
+      "title": "California Screamin'",
+      "description": "Warm, cinematic pop/electro with laid-back South Coast UK-rap storytelling—turning a rain-soaked Golden Gate Bridge memory into shared release.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Kieran-Simkin-California-Screamin-Cover-2400.jpg",
+      "image_alt": "California Screamin' cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Kieran-Simkin-California-Screamin-Review-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-01-15",
+      "duration_seconds": null,
+      "isrcs": [],
+      "upc": "700904445807",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/california-screamin"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 760,
+      "page_url": "https://kieransimkin.co.uk/patriotic-revolution/",
+      "title": "Patriotic Revolution",
+      "description": "Peaceful. Lawful. Formally clear. A hip-hop protest record about assembly, restraint and accountability under the same law.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Patriotic-Revolution-cover-3000-scaled.png",
+      "image_alt": "Patriotic Revolution cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Patriotic-Revolution-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-09-07",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6J42665623"
+      ],
+      "upc": "700978737143",
+      "same_as": [
+        "https://youtu.be/SJpGkXEV6V8",
+        "https://distrokid.com/hyperfollow/kieransimkin/patriotic-revolution"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 140,
+      "page_url": "https://kieransimkin.co.uk/light-will-win/",
+      "title": "Light Will Win (Shubh Diwali)",
+      "description": "A luminous UK garage and dance-pop celebration of family, wisdom, self-inquiry and the light within.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover.jpg",
+      "image_alt": "Light Will Win (Shubh Diwali) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Light-Will-Win-Shubh-Diwali-320kbps-mastered.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-11-06",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6G82601300"
+      ],
+      "upc": "881900494447",
+      "same_as": [
+        "https://music.apple.com/us/album/light-will-win-shubh-diwali-single/6800287739",
+        "https://distrokid.com/hyperfollow/kieransimkin/light-will-win-shubh-diwali"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 130,
+      "page_url": "https://kieransimkin.co.uk/dying-for-a-diagnosis/",
+      "title": "Dying for a Diagnosis",
+      "description": "A dark, cinematic UK hip-hop narrative about ADHD, diagnostic delay, rejected shared care and the cost of being left on hold—drawn from Kieran Simkin’s lived experience and the experience of a close friend whose identity remains private.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover.png",
+      "image_alt": "Dying for a Diagnosis cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Dying-for-a-Diagnosis-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-09-11",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6FF2636733"
+      ],
+      "upc": "882197714027",
+      "same_as": [
+        "https://open.spotify.com/album/6Dzg0GvpTxITmUXDqFcooE",
+        "https://music.apple.com/us/album/dying-for-a-diagnosis-single/6793414622",
+        "https://www.youtube.com/watch?v=14zrgX5I2uk",
+        "https://distrokid.com/hyperfollow/kieransimkin/dying-for-a-diagnosis"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 150,
+      "page_url": "https://kieransimkin.co.uk/moderate-or-good/",
+      "title": "Moderate or Good",
+      "description": "The Shipping Forecast’s sea areas, wind, weather and visibility become the metre of a slow, nocturnal UK hip-hop journey about radio, distance and the sound of home.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover-1.jpg",
+      "image_alt": "Moderate or Good cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Moderate-or-Good-Full-Version.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-08-28",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6F72647901"
+      ],
+      "upc": "882100307650",
+      "same_as": [
+        "https://open.spotify.com/album/1xMACcYRPA1TmK4QpjYlB5",
+        "https://music.apple.com/us/album/moderate-or-good-single/6791408382",
+        "https://www.youtube.com/playlist?list=OLAK5uy_nmm5N_40xw2N6MBaZEkAK9xqspHBvJjaE",
+        "https://distrokid.com/hyperfollow/kieransimkin/moderate-or-good"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 397,
+      "page_url": "https://kieransimkin.co.uk/santa-flies-tonight/",
+      "title": "Santa Flies Tonight",
+      "description": "A cold, adult Christmas heartbreak song: minor-key piano, restrained UK pop/hip-hop production and distant sleigh bells beneath a fictional rooftop crisis.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover-web-1600.jpg",
+      "image_alt": "Santa Flies Tonight cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Santa-Flies-Tonight-Review-Master.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-12-11",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HS2624151"
+      ],
+      "upc": "701518614856",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/santa-flies-tonight"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 399,
+      "page_url": "https://kieransimkin.co.uk/christmas-tat/",
+      "title": "Christmas Tat",
+      "description": "Bright UK garage/pop about Secret Santa, unwanted gifts and spending money people do not have.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/christmas-tat-cover.jpg",
+      "image_alt": "Christmas Tat cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Christmas-Tat-radio-submission-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-11-27",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HQ2683107"
+      ],
+      "upc": "701546426063",
+      "same_as": [
+        "https://music.apple.com/us/album/christmas-tat-single/6804157073",
+        "https://distrokid.com/hyperfollow/kieransimkin/christmas-tat"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 243,
+      "page_url": "https://kieransimkin.co.uk/presents-chocolate/",
+      "title": "Presents & Chocolate",
+      "description": "Presents & Chocolate puts a bright late-90s/early-00s UK garage two-step under the excited, messy reality of family Christmas morning.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/presents-and-chocolate-cover.jpg",
+      "image_alt": "Presents & Chocolate cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Presents-Chocolate-radio-submission-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-12-04",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HL2674338"
+      ],
+      "upc": "882061427381",
+      "same_as": [
+        "https://music.apple.com/us/album/presents-chocolate-single/6802165006",
+        "https://distrokid.com/hyperfollow/kieransimkin/presents--chocolate"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 246,
+      "page_url": "https://kieransimkin.co.uk/fighting-entropy/",
+      "title": "Fighting Entropy",
+      "description": "The official press page for Fighting Entropy by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/fighting-entropy-cover.jpg",
+      "image_alt": "Fighting Entropy cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Fighting-Entropy-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-11-20",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HK2698031"
+      ],
+      "upc": "882061859601",
+      "same_as": [
+        "https://music.apple.com/us/album/fighting-entropy-single/6801955613",
+        "https://distrokid.com/hyperfollow/kieransimkin/fighting-entropy"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 248,
+      "page_url": "https://kieransimkin.co.uk/november-christmas/",
+      "title": "November Christmas",
+      "description": "The official press page for November Christmas by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/november-christmas-cover.jpg",
+      "image_alt": "November Christmas cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/November-Christmas-Review-Master.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-11-13",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HK2620814"
+      ],
+      "upc": "882011317267",
+      "same_as": [
+        "https://music.apple.com/us/album/november-christmas-single/6801728266",
+        "https://distrokid.com/hyperfollow/kieransimkin/november-christmas"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 250,
+      "page_url": "https://kieransimkin.co.uk/pbxin/",
+      "title": "PBXin'",
+      "description": "The official press page for PBXin' by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/pbxin-cover.jpg",
+      "image_alt": "PBXin' cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/PBXin-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-10-30",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6G62609978"
+      ],
+      "upc": "881864178476",
+      "same_as": [
+        "https://music.apple.com/us/album/pbxin-single/6799488765",
+        "https://distrokid.com/hyperfollow/kieransimkin/pbxin"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 252,
+      "page_url": "https://kieransimkin.co.uk/made-from-the-clay-and-the-stars-anunnaki/",
+      "title": "Made from the clay and the stars (Anunnaki)",
+      "description": "The official press page for Made from the clay and the stars (Anunnaki) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/made-from-the-clay-and-the-stars-anunnaki-cover.jpg",
+      "image_alt": "Made from the clay and the stars (Anunnaki) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Made-from-the-clay-and-the-stars-Anunnaki-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-10-23",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6G52678420"
+      ],
+      "upc": "881864377343",
+      "same_as": [
+        "https://music.apple.com/us/album/made-from-the-clay-and-the-stars-anunnaki-single/6799373165",
+        "https://distrokid.com/hyperfollow/kieransimkin/made-from-the-clay-and-the-stars-anunnaki"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 254,
+      "page_url": "https://kieransimkin.co.uk/blame-putin/",
+      "title": "Blame Putin",
+      "description": "The official press page for Blame Putin by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/blame-putin-cover.jpg",
+      "image_alt": "Blame Putin cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Blame-Putin-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-10-16",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6G52673923"
+      ],
+      "upc": "881864418329",
+      "same_as": [
+        "https://music.apple.com/us/album/blame-putin-single/6799360609",
+        "https://distrokid.com/hyperfollow/kieransimkin/blame-putin-2"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 256,
+      "page_url": "https://kieransimkin.co.uk/paper-dreams-from-the-sky/",
+      "title": "Paper dreams from the sky",
+      "description": "Dreamy, nocturnal UK hip-hop/pop: conversational British rap, dusty swing and restrained UKG percussion rise into an airy female hook above Oxford’s spires.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/paper-dreams-from-the-sky-cover.jpg",
+      "image_alt": "Paper dreams from the sky cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/paper-dreams-review-audio-8fb915fa35114ee8b290ed940d3ce67b.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-10-09",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6FK2601890"
+      ],
+      "upc": "882321665553",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/paper-dreams-from-the-sky"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 258,
+      "page_url": "https://kieransimkin.co.uk/silly-sausage-britain/",
+      "title": "Silly Sausage Britain",
+      "description": "A short, bright collision between political seriousness and Britain’s instinct to answer the worst moment with a ridiculous hook.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/silly-sausage-britain-cover.jpg",
+      "image_alt": "Silly Sausage Britain cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Silly-Sausage-Britain-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-10-02",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6FJ2634079"
+      ],
+      "upc": "882204063759",
+      "same_as": [
+        "https://music.apple.com/us/album/silly-sausage-britain-single/6794763783",
+        "https://distrokid.com/hyperfollow/kieransimkin/silly-sausage-britain"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 260,
+      "page_url": "https://kieransimkin.co.uk/arcadians/",
+      "title": "Arcadians",
+      "description": "The official press page for Arcadians by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/arcadians-cover.jpg",
+      "image_alt": "Arcadians cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Arcadians-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-09-25",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6EB2639508"
+      ],
+      "upc": "882557810017",
+      "same_as": [
+        "https://music.apple.com/us/album/arcadians-single/6785145235",
+        "https://distrokid.com/hyperfollow/kieransimkin/arcadians"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 262,
+      "page_url": "https://kieransimkin.co.uk/chips-and-ketchup/",
+      "title": "Chips and Ketchup",
+      "description": "The official press page for Chips and Ketchup by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/chips-and-ketchup-cover.jpg",
+      "image_alt": "Chips and Ketchup cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/ck-qt6fg2608817-explicit-advance-v1.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-09-18",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6FG2608817"
+      ],
+      "upc": "882197314333",
+      "same_as": [
+        "https://open.spotify.com/album/5Vxf3ypCqmDaW93RbUPUQd",
+        "https://www.youtube.com/playlist?list=OLAK5uy_lMFdBB6JapQetUlE7KLTky6rm0fUzifY8",
+        "https://distrokid.com/hyperfollow/kieransimkin/chips-and-ketchup"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 264,
+      "page_url": "https://kieransimkin.co.uk/the-truth-is-a-virus/",
+      "title": "The Truth is a Virus",
+      "description": "The official press page for The Truth is a Virus by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover-2.jpg",
+      "image_alt": "The Truth is a Virus cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/The-Truth-is-a-Virus-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-09-04",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6F72668760"
+      ],
+      "upc": "882100202597",
+      "same_as": [
+        "https://open.spotify.com/album/7EqYYHqRdb0Sfd2fMYc1JY",
+        "https://music.apple.com/us/album/the-truth-is-a-virus-single/6791476713",
+        "https://www.youtube.com/playlist?list=OLAK5uy_lUDBJlPj5NGB-j0FsXCGeak-aaC08ak1E",
+        "https://distrokid.com/hyperfollow/kieransimkin/the-truth-is-a-virus"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 266,
+      "page_url": "https://kieransimkin.co.uk/hit-piece/",
+      "title": "Hit Piece",
+      "description": "The official press page for Hit Piece by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/hit-piece-cover.jpg",
+      "image_alt": "Hit Piece cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Hit-Piece-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-08-14",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6F42698347"
+      ],
+      "upc": "882093595195",
+      "same_as": [
+        "https://open.spotify.com/album/4l06YrKGHqpovXhl8J00TX",
+        "https://music.apple.com/us/album/hit-piece-single/6790266156",
+        "https://www.youtube.com/watch?v=ljz5oerKWz8&list=OLAK5uy_nPXh03InN_tBt1rI1AI7F34jeAlqwq4FU",
+        "https://distrokid.com/hyperfollow/kieransimkin/hit-piece"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 268,
+      "page_url": "https://kieransimkin.co.uk/fully-nocturnal/",
+      "title": "Fully Nocturnal",
+      "description": "A song about the work that finally fitted: pizza runs, milk rounds, code written through the night and collaboration across time zones.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/fully-nocturnal-cover.jpg",
+      "image_alt": "Fully Nocturnal cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Fully-Nocturnal-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-08-07",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6EZ2694452"
+      ],
+      "upc": "882988250529",
+      "same_as": [
+        "https://open.spotify.com/album/0x8Q5VCiqXI1BQB456Yu7k",
+        "https://music.apple.com/us/album/fully-nocturnal-single/6789097005",
+        "https://www.youtube.com/watch?v=nIuQItu7d_E&list=OLAK5uy_ms9QcysrclpNac9tglzyeYGMIgLo0Aaus",
+        "https://distrokid.com/hyperfollow/kieransimkin/fully-nocturnal"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 270,
+      "page_url": "https://kieransimkin.co.uk/amnesty-honestly-spanish-migrant-invasion/",
+      "title": "Amnesty, honestly? (Spanish Migrant Invasion)",
+      "description": "The official press page for Amnesty, honestly? (Spanish Migrant Invasion) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/cover-civil-aid-v2.png",
+      "image_alt": "Amnesty, honestly? (Spanish Migrant Invasion) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Amnesty-honestly-Spanish-Migrant-Invasion-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-08-01",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6FY2622219"
+      ],
+      "upc": "882422453325",
+      "same_as": [
+        "https://open.spotify.com/album/2nMKPbXTKUjHGdGJGUawGj",
+        "https://music.apple.com/us/album/amnesty-honestly-spanish-migrant-invasion-single/6797000765",
+        "https://www.youtube.com/watch?v=klf3Ldu-YmU&list=OLAK5uy_kn-DXHC__LQZi2f9TpVrrfz8GN5TvUaBg",
+        "https://distrokid.com/hyperfollow/kieransimkin/amnesty-honestly-spanish-migrant-invasion"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 272,
+      "page_url": "https://kieransimkin.co.uk/so-youre-a-racist-now-father/",
+      "title": "So you're a racist now, father?",
+      "description": "The official press page for So you're a racist now, father? by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/so-youre-a-racist-now-father-cover.jpg",
+      "image_alt": "So you're a racist now, father? cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/So-youre-a-racist-now-father-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-31",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6EW2637040"
+      ],
+      "upc": "882792048145",
+      "same_as": [
+        "https://open.spotify.com/album/5DxV1oAOKh84VKAhrQ7Cd2",
+        "https://music.apple.com/us/album/so-youre-a-racist-now-father-single/6787562760",
+        "https://www.youtube.com/watch?v=7ajCVr7ai0k&list=OLAK5uy_mJKJuLSyCgbChzgdPuvU8ZMXx5MJnLKPs",
+        "https://distrokid.com/hyperfollow/kieransimkin/so-youre-a-racist-now-father"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 274,
+      "page_url": "https://kieransimkin.co.uk/bed-of-lies/",
+      "title": "Bed of Lies",
+      "description": "The official press page for Bed of Lies by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/bed-of-lies-cover.jpg",
+      "image_alt": "Bed of Lies cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Bed-of-Lies-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-24",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6E82682142"
+      ],
+      "upc": "882458097685",
+      "same_as": [
+        "https://open.spotify.com/album/2flPVceVlUIxx1NoqZILs0",
+        "https://music.apple.com/us/album/bed-of-lies-single/6783104444",
+        "https://www.youtube.com/watch?v=ZVOQ0asg6YA&list=OLAK5uy_nJRFMoepzjuG8nw7SukSrZA3IqJiA6A0M",
+        "https://distrokid.com/hyperfollow/kieransimkin/bed-of-lies"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 276,
+      "page_url": "https://kieransimkin.co.uk/walk-with-me/",
+      "title": "Walk With Me",
+      "description": "The official press page for Walk With Me by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/walk-with-me-cover.jpg",
+      "image_alt": "Walk With Me cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Walk-With-Me-radio-submission-256kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-17",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT3FB2642685"
+      ],
+      "upc": "883306448130",
+      "same_as": [
+        "https://open.spotify.com/album/3pIERyt4NKGBf28HcJRDWp",
+        "https://music.apple.com/us/album/walk-with-me-single/6779781169",
+        "https://www.youtube.com/watch?v=9JFlphW8Q80&list=OLAK5uy_mytTC8gUasc-VLB0Gym-5kPw3TWL71KA4",
+        "https://distrokid.com/hyperfollow/kieransimkin/walk-with-me"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 278,
+      "page_url": "https://kieransimkin.co.uk/battling-a-bin-nigel-farage-vs-count-binface/",
+      "title": "Battling a Bin (Nigel Farage Vs Count BinFace)",
+      "description": "The official press page for Battling a Bin (Nigel Farage Vs Count BinFace) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/battling-a-bin-nigel-farage-vs-count-binface-cover.jpg",
+      "image_alt": "Battling a Bin (Nigel Farage Vs Count BinFace) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Battling-a-Bin-Nigel-Farage-Vs-Count-BinFace-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-10",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6F22686757"
+      ],
+      "upc": "883005766351",
+      "same_as": [
+        "https://open.spotify.com/album/5FCV8B2Po52X4cR1CYODkx",
+        "https://music.apple.com/us/album/battling-a-bin-nigel-farage-vs-count-binface-single/6789470452",
+        "https://www.youtube.com/watch?v=HTqVGyDn5V8&list=OLAK5uy_m1FkFK_ap--0SFw0vDqtl1ZUtudRIuIew",
+        "https://distrokid.com/hyperfollow/kieransimkin/battling-a-bin-nigel-farage-vs-count-binface"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 280,
+      "page_url": "https://kieransimkin.co.uk/fur-coat-taxi/",
+      "title": "Fur Coat Taxi",
+      "description": "The official press page for Fur Coat Taxi by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/fur-coat-taxi-cover.jpg",
+      "image_alt": "Fur Coat Taxi cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Fur-Coat-Taxi-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-10",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6E82603264"
+      ],
+      "upc": "882458500116",
+      "same_as": [
+        "https://open.spotify.com/album/4cLcEhhOWpCK1s3lsCTchX",
+        "https://music.apple.com/us/album/fur-coat-taxi-single/6782681337",
+        "https://www.youtube.com/watch?v=JlqjXiB7MlE&list=OLAK5uy_mk1a-y-k9fEIba2Vf7ouJ_gM1yYZDWUTM",
+        "https://distrokid.com/hyperfollow/kieransimkin/fur-coat-taxi"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 282,
+      "page_url": "https://kieransimkin.co.uk/tool-of-the-state/",
+      "title": "Tool of the State",
+      "description": "The official press page for Tool of the State by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/tool-of-the-state-cover.jpg",
+      "image_alt": "Tool of the State cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Tool-of-the-State-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-07-03",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT3F82601968",
+        "QT3F82601969"
+      ],
+      "upc": "883128165680",
+      "same_as": [
+        "https://open.spotify.com/album/0k7psEDpvkQzIFt77lCYcg",
+        "https://music.apple.com/us/album/tool-of-the-state-single/6778260626",
+        "https://www.youtube.com/watch?v=lGVFpzmvXcY&list=OLAK5uy_lZ4qrQSP630AME3jyDN4jOC_LIEQRwQ-c",
+        "https://distrokid.com/hyperfollow/kieransimkin/tool-of-the-state"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 284,
+      "page_url": "https://kieransimkin.co.uk/wardialing/",
+      "title": "Wardialing",
+      "description": "The official press page for Wardialing by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/wardialing-cover.jpg",
+      "image_alt": "Wardialing cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Wardialing-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-06-26",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT3F42628331",
+        "QT3F42628332"
+      ],
+      "upc": "883105912078",
+      "same_as": [
+        "https://open.spotify.com/album/7lduAjKWbFDf73yxFuC8K5",
+        "https://music.apple.com/us/album/wardialing-ep/6775270963",
+        "https://www.youtube.com/watch?v=s_ncIj776Mo&list=OLAK5uy_kfAS68GcM6BkMZ355UhJh1mMVKu8s0IN8",
+        "https://distrokid.com/hyperfollow/kieransimkin/wardialing"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 286,
+      "page_url": "https://kieransimkin.co.uk/they-listen/",
+      "title": "They Listen",
+      "description": "The official press page for They Listen by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/they-listen-cover.jpg",
+      "image_alt": "They Listen cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/They-Listen-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-06-19",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT3F72638348"
+      ],
+      "upc": "883128421465",
+      "same_as": [
+        "https://open.spotify.com/album/4OgDiaLa90nUf1duyyutA2",
+        "https://music.apple.com/us/album/they-listen-single/6778147355",
+        "https://www.youtube.com/watch?v=Po5HumCl5iw&list=OLAK5uy_nhy0Rfn1m6hCqdZRreti9iiwD4jLXQaUk",
+        "https://distrokid.com/hyperfollow/kieransimkin/they-listen"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 288,
+      "page_url": "https://kieransimkin.co.uk/i-dont-care-restore-britain-anthem/",
+      "title": "I Don't Care (Restore Britain Anthem)",
+      "description": "The official press page for I Don't Care (Restore Britain Anthem) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/i-dont-care-restore-britain-anthem-cover.jpg",
+      "image_alt": "I Don't Care (Restore Britain Anthem) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/I-Dont-Care-Restore-Britain-Anthem-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-06-18",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6E52654283"
+      ],
+      "upc": "883500773397",
+      "same_as": [
+        "https://open.spotify.com/album/3LMWW7ay3m5zkeP1FdGizD",
+        "https://music.apple.com/us/album/i-dont-care-restore-britain-anthem-single/6781865258",
+        "https://www.youtube.com/watch?v=EU81zfjGHxo&list=OLAK5uy_leykp2IBD1y1RsiJUSfvs_4UQPg_7jIac",
+        "https://distrokid.com/hyperfollow/kieransimkin/i-dont-care-restore-britain-anthem"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 290,
+      "page_url": "https://kieransimkin.co.uk/on-top-of-the-world/",
+      "title": "On Top Of The World",
+      "description": "The official press page for On Top Of The World by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/on-top-of-the-world-cover.jpg",
+      "image_alt": "On Top Of The World cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/On-Top-Of-The-World-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-06-12",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZZ782608230"
+      ],
+      "upc": "825293001592",
+      "same_as": [
+        "https://open.spotify.com/album/2FmZvALuvvAnXc7ljZvibu",
+        "https://music.apple.com/us/album/on-top-of-the-world-single/6767869930",
+        "https://www.youtube.com/watch?v=lmPRdWC3yqM&list=OLAK5uy_nzjqX24ATBXzHG6MCkKOZ51SGKmyW-alQ",
+        "https://distrokid.com/hyperfollow/kieransimkin/on-top-of-the-world-2"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 292,
+      "page_url": "https://kieransimkin.co.uk/gremlins/",
+      "title": "Gremlins",
+      "description": "The official press page for Gremlins by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/gremlins-cover.jpg",
+      "image_alt": "Gremlins cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Gremlins-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-06-05",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT3F62646490"
+      ],
+      "upc": "883128921170",
+      "same_as": [
+        "https://open.spotify.com/album/5mtl2iKbJffANVN79zjkoo",
+        "https://music.apple.com/us/album/gremlins-single/6777861878",
+        "https://www.youtube.com/watch?v=O0ZZP9gT6qQ&list=OLAK5uy_mu9tkyVmZx83BRVwWNoSHmiqp2QaBiGhM",
+        "https://distrokid.com/hyperfollow/kieransimkin/gremlins"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 294,
+      "page_url": "https://kieransimkin.co.uk/time-is-a-gift/",
+      "title": "Time is a gift",
+      "description": "The official press page for Time is a gift by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/time-is-a-gift-cover.jpg",
+      "image_alt": "Time is a gift cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Time-is-a-gift-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-05-29",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZWFG2653867"
+      ],
+      "upc": "825406797312",
+      "same_as": [
+        "https://open.spotify.com/album/2MNPf7RibQDgpgeVRvdtK5",
+        "https://music.apple.com/us/album/time-is-a-gift-single/1893793620",
+        "https://www.youtube.com/watch?v=t_-cM3xppO4&list=OLAK5uy_nPMyYb6Ltgx4uVAC1CHWCZh7UAE_w2sHY",
+        "https://distrokid.com/hyperfollow/kieransimkin/time-is-a-gift"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 296,
+      "page_url": "https://kieransimkin.co.uk/lost-girls/",
+      "title": "Lost Girls",
+      "description": "The official press page for Lost Girls by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/lost-girls-cover.jpg",
+      "image_alt": "Lost Girls cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Lost-Girls-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-05-22",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZTBF2691735"
+      ],
+      "upc": "825417919796",
+      "same_as": [
+        "https://open.spotify.com/album/2vz792EF2OXcjs69JY5pi0",
+        "https://music.apple.com/us/album/lost-girls-single/1893285976",
+        "https://www.youtube.com/watch?v=JKTx2W0uD50&list=OLAK5uy_nUHqSkR7BoWXsd-eHPhin8A004ccOMg08",
+        "https://distrokid.com/hyperfollow/kieransimkin/lost-girls"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 298,
+      "page_url": "https://kieransimkin.co.uk/dmitri-my-talisman/",
+      "title": "Dmitri My Talisman",
+      "description": "A psychedelic rock and electronic single moving through recursive order, living networks and branching time—as artistic questions, not scientific proof.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/dmitri-my-talisman-cover.jpg",
+      "image_alt": "Dmitri My Talisman cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Dmitri-My-Talisman-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-05-15",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZTB92647451"
+      ],
+      "upc": "825583156308",
+      "same_as": [
+        "https://open.spotify.com/album/6yvrPVMdWdzssFjVMnb74f",
+        "https://music.apple.com/us/album/dmitri-my-talisman-single/1891286270",
+        "https://www.youtube.com/watch?v=VVy-ErOE3Hc&list=OLAK5uy_luXSCWHVahL1p2p-LAJAVoayCkYfgmIZM",
+        "https://distrokid.com/hyperfollow/kieransimkin/dmitri-my-talisman"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 300,
+      "page_url": "https://kieransimkin.co.uk/edie-rose-feat-darthtwisty101s-music/",
+      "title": "Edie Rose (feat. DarthTwisty101's Music)",
+      "description": "The official press page for Edie Rose (feat. DarthTwisty101's Music) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/edie-rose-feat-darthtwisty101s-music-cover.jpg",
+      "image_alt": "Edie Rose (feat. DarthTwisty101's Music) cover artwork",
+      "audio_urls": [],
+      "audio_local_paths": [],
+      "release_date": "2026-05-08",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZZ792678195"
+      ],
+      "upc": "825259356568",
+      "same_as": [
+        "https://open.spotify.com/album/1hfsUbl7TkC3OdO2xR5e26",
+        "https://music.apple.com/us/album/edie-rose-feat-darthtwisty101-single/6768959958",
+        "https://www.youtube.com/watch?v=TTYNqIIrpyI&list=OLAK5uy_nVQdEQprFsdQPz7rttmGHsCdCLj8WkdXs",
+        "https://distrokid.com/hyperfollow/kieransimkin/edie-rose-feat-darthtwisty101"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "waived-no-source"
+    },
+    {
+      "post_id": 302,
+      "page_url": "https://kieransimkin.co.uk/vibe-killer/",
+      "title": "Vibe Killer",
+      "description": "The official press page for Vibe Killer by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/vibe-killer-cover.jpg",
+      "image_alt": "Vibe Killer cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Vibe-Killer-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-05-07",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZTAZ2600630"
+      ],
+      "upc": "825682268551",
+      "same_as": [
+        "https://open.spotify.com/album/4sEeZoh759DQNPDIg7MyBL",
+        "https://music.apple.com/us/album/vibe-killer-single/1888070320",
+        "https://www.youtube.com/watch?v=lE151zlTSV4&list=OLAK5uy_nSJ5U0lboZ4NyYKyBFduGAFjijPmjTYtY",
+        "https://distrokid.com/hyperfollow/kieransimkin/vibe-killer-2"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 304,
+      "page_url": "https://kieransimkin.co.uk/tarquin-and-the-hairy-biker/",
+      "title": "Tarquin and the Hairy Biker",
+      "description": "The official press page for Tarquin and the Hairy Biker by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/tarquin-and-the-hairy-biker-cover.jpg",
+      "image_alt": "Tarquin and the Hairy Biker cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Tarquin-and-the-Hairy-Biker-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-04-27",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZRP42685917"
+      ],
+      "upc": "825715870058",
+      "same_as": [
+        "https://open.spotify.com/album/5xAgQLHPgYo3V0r1HhW9Fy",
+        "https://music.apple.com/us/album/tarquin-and-the-hairy-biker-single/1885417911",
+        "https://www.youtube.com/watch?v=fuguztMj4Js&list=OLAK5uy_nt-Qz855XnfVPi_1CZbZzanxlqyxWQFYE",
+        "https://distrokid.com/hyperfollow/kieransimkin/tarquin-and-the-hairy-biker-2"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 306,
+      "page_url": "https://kieransimkin.co.uk/emerald-shooting-star/",
+      "title": "Emerald Shooting Star",
+      "description": "Emerald Shooting Star follows a real route through Audley End, Ashdon, Linton, Bartlow, the Chesterfords and Littlebury, from hospital lights and a near crash to a bright green fireball overhead.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/emerald-shooting-star-cover.jpg",
+      "image_alt": "Emerald Shooting Star cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Emerald-Shooting-Star-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-04-21",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZNWZ2605984"
+      ],
+      "upc": "825758796773",
+      "same_as": [
+        "https://open.spotify.com/album/3jma3s9SSWTWXtKUONwCRn",
+        "https://music.apple.com/us/album/emerald-shooting-star-single/1883952508",
+        "https://www.youtube.com/watch?v=JS12LzbYMzM",
+        "https://distrokid.com/hyperfollow/kieransimkin/emerald-shooting-star"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 308,
+      "page_url": "https://kieransimkin.co.uk/faded-dreams/",
+      "title": "Faded Dreams",
+      "description": "The official press page for Faded Dreams by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/faded-dreams-cover.jpg",
+      "image_alt": "Faded Dreams cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Faded-Dreams-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-04-17",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZPLS2647974"
+      ],
+      "upc": "825723603877",
+      "same_as": [
+        "https://open.spotify.com/album/07CmWCNVyjjEuGUbezeBxq",
+        "https://music.apple.com/us/album/faded-dreams-single/1885005737",
+        "https://www.youtube.com/watch?v=Zv2LYqVzAyQ",
+        "https://distrokid.com/hyperfollow/kieransimkin/faded-dreams"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 310,
+      "page_url": "https://kieransimkin.co.uk/we-dont-need-no-room-to-roll/",
+      "title": "We Don't Need No Room To Roll",
+      "description": "The 2026 release supersedes the earlier version. Its joy is immediate, but its final perspective is grateful rather than possessive: the connection was real even though it did not become an ongoing relationship.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/we-dont-need-no-room-to-roll-cover.jpg",
+      "image_alt": "We Don't Need No Room To Roll cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/We-Dont-Need-No-Room-To-Roll-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-04-08",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZHN92665502"
+      ],
+      "upc": "821451413344",
+      "same_as": [
+        "https://open.spotify.com/album/5Fglg0Xvn4EhcfpuWIlKl8",
+        "https://music.apple.com/us/album/we-dont-need-no-room-to-roll-single/1874449135",
+        "https://www.youtube.com/watch?v=SE3q8SNT1t0",
+        "https://distrokid.com/hyperfollow/kieransimkin/we-dont-need-no-room-to-roll"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 312,
+      "page_url": "https://kieransimkin.co.uk/rupert-lowe-for-pm/",
+      "title": "Rupert Lowe for PM",
+      "description": "The official press page for Rupert Lowe for PM by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/rupert-lowe-for-pm-cover.jpg",
+      "image_alt": "Rupert Lowe for PM cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Rupert-Lowe-for-PM-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-04-02",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZTB72654382",
+        "QZTB72654383"
+      ],
+      "upc": "825626201965",
+      "same_as": [
+        "https://open.spotify.com/album/27r6frSUk3qpEOkElN9DkJ",
+        "https://music.apple.com/us/album/rupert-lowe-for-pm-single/1890727238",
+        "https://www.youtube.com/watch?v=cfSqKBUeINs&list=OLAK5uy_nT1glp6Jyq0eIdOUzz_nOjfDhEvsORXSY",
+        "https://distrokid.com/hyperfollow/kieransimkin/rupert-lowe-for-pm"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 314,
+      "page_url": "https://kieransimkin.co.uk/parallel-life-feat-north-laine/",
+      "title": "Parallel Life (feat. North Laine)",
+      "description": "The official press page for Parallel Life (feat. North Laine) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/parallel-life-feat-north-laine-cover.jpg",
+      "image_alt": "Parallel Life (feat. North Laine) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Parallel-Life-feat.-North-Laine-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-03-31",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZK6H2601194"
+      ],
+      "upc": "821430186566",
+      "same_as": [
+        "https://open.spotify.com/album/3IrNz6LIEK2cV56DTAVWku",
+        "https://music.apple.com/us/album/parallel-life-feat-north-laine-single/1878439186",
+        "https://www.youtube.com/watch?v=z-DhqKPrCB4&list=OLAK5uy_l0bBc2UPT2DmzV7RfQLhHHo5NGBBunSxc",
+        "https://distrokid.com/hyperfollow/kieransimkin/parallel-life-feat-north-laine"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 316,
+      "page_url": "https://kieransimkin.co.uk/alfie/",
+      "title": "Alfie",
+      "description": "The official press page for Alfie by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/alfie-cover.jpg",
+      "image_alt": "Alfie cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Alfie-feat.-North-Laine-Radio-Edit-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-03-18",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZHN82644556",
+        "QZHN82644557"
+      ],
+      "upc": "821460297003",
+      "same_as": [
+        "https://open.spotify.com/album/51xNOWlaK0qR3xJ8R0uC1n",
+        "https://music.apple.com/us/album/alfie-feat-north-laine-single/1874087813",
+        "https://www.youtube.com/watch?v=pRPUU-KHYTc&list=OLAK5uy_kOX2tenPQVVBdz6MFKN6Xb81aeRbiU9HY",
+        "https://distrokid.com/hyperfollow/kieransimkin/alfie"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 318,
+      "page_url": "https://kieransimkin.co.uk/mouse-ali-bye-bye/",
+      "title": "Mouse Ali Bye Bye (موش علی بای بای)",
+      "description": "The official press page for Mouse Ali Bye Bye (موش علی بای بای) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/mouse-ali-bye-bye-cover.jpg",
+      "image_alt": "Mouse Ali Bye Bye (موش علی بای بای) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Mouse-Ali-Bye-Bye-%D9%85%D9%88%D8%B4-%D8%B9%D9%84%DB%8C-%D8%A8%D8%A7%DB%8C-%D8%A8%D8%A7%DB%8C-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-03-01",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZNWS2643504",
+        "QZNWS2643505",
+        "QZNWS2643506"
+      ],
+      "upc": "821275585012",
+      "same_as": [
+        "https://open.spotify.com/album/1A9Od1AhVq6QhXlFXxDZfa",
+        "https://music.apple.com/us/album/mouse-ali-bye-bye-%D9%85%D9%88%D8%B4-%D8%B9%D9%84%DB%8C-%D8%A8%D8%A7%DB%8C-%D8%A8%D8%A7%DB%8C-single/1881455410",
+        "https://www.youtube.com/watch?v=G3ZSeElX4fw&list=OLAK5uy_na4jK_q_0PC7OVtMu4POKgjuEnqamggbg",
+        "https://distrokid.com/hyperfollow/kieransimkin/mouse-ali-bye-bye-----2"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 320,
+      "page_url": "https://kieransimkin.co.uk/so-slow-down/",
+      "title": "So Slow Down",
+      "description": "The official press page for So Slow Down by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/so-slow-down-cover.jpg",
+      "image_alt": "So Slow Down cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-So-Slow-Down-feat.-North-Laine-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-02-25",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZDA82665203",
+        "QZDA82665204"
+      ],
+      "upc": "821520601658",
+      "same_as": [
+        "https://open.spotify.com/album/1j04rZRLgSug4dx2XWzRG9",
+        "https://music.apple.com/us/album/so-slow-down-feat-north-laine-single/1870044122",
+        "https://www.youtube.com/watch?v=WLnQqXOiMzY&list=OLAK5uy_mQRicjGWfR3W9lKO4GPKsPa7kr4n_qwKk",
+        "https://distrokid.com/hyperfollow/kieransimkin/so-slow-down"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 322,
+      "page_url": "https://kieransimkin.co.uk/return-of-freedom/",
+      "title": "Return of Freedom (بازگشت آزادی)",
+      "description": "The official press page for Return of Freedom (بازگشت آزادی) by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.album",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/return-of-freedom-cover.jpg",
+      "image_alt": "Return of Freedom (بازگشت آزادی) cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/01-Return-of-Freedom-Reza-Pahlavi-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-01-10",
+      "duration_seconds": null,
+      "isrcs": [
+        "QZFZ72620935",
+        "QZFZ72620936",
+        "QZFZ72620937",
+        "QZFZ72620939",
+        "QZFZ72620940",
+        "QZFZ72620941"
+      ],
+      "upc": "821550558359",
+      "same_as": [
+        "https://open.spotify.com/album/76OLMkhbzFTsOOsi5OZw5r",
+        "https://music.apple.com/us/album/return-of-freedom-%D8%A8%D8%A7%D8%B2%DA%AF%D8%B4%D8%AA-%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C-ep/1867977025",
+        "https://www.youtube.com/watch?v=psYpzNjZ-yc&list=OLAK5uy_kBFYQ1p8muOul3M3k6K9Dfrkz3qxBc3ak",
+        "https://distrokid.com/hyperfollow/kieransimkin/return-of-freedom--"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "verified-upload-2026-09-23"
+    },
+    {
+      "post_id": 137,
+      "page_url": "https://kieransimkin.co.uk/birth-stories/",
+      "title": "Birth Stories",
+      "description": "A first-person song about Kieran Simkin’s experience during the births of his three children: trying to advocate, being treated at times like a visitor, and needing clear communication under pressure.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/birth-stories-clean.png",
+      "image_alt": "Birth Stories cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Birth-Stories-radio-submission-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-08-21",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6F52695255"
+      ],
+      "upc": "882093096708",
+      "same_as": [
+        "https://open.spotify.com/album/3ZttmuMpJALIEFtex7RLxI",
+        "https://music.apple.com/us/album/birth-stories-single/6790676805",
+        "https://www.youtube.com/watch?v=wAK4mAK47Nk",
+        "https://distrokid.com/hyperfollow/kieransimkin/birth-stories"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 614,
+      "page_url": "https://kieransimkin.co.uk/hell-gondola/",
+      "title": "Hell Gondola",
+      "description": "Bright UK garage and nu-disco carry a satirical ride through the meme afterlife of Paris 2024.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/08/hell-gondola-cover.jpg",
+      "image_alt": "Hell Gondola cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/08/Hell-Gondola-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-01-08",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT6HU2661537"
+      ],
+      "upc": "701508365553",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/hell-gondola"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 905,
+      "page_url": "https://kieransimkin.co.uk/bum-goblin/",
+      "title": "Bum Goblin",
+      "description": "A three-minute pop song born from an argument about superhero films and one fixed goblin expression that made the whole thing impossible to take seriously.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/cover-scaled.jpg",
+      "image_alt": "Bum Goblin cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Bum-Goblin-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-02-12",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT9XL2606647"
+      ],
+      "upc": "700813975303",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/bum-goblin"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 912,
+      "page_url": "https://kieransimkin.co.uk/out-of-tokens/",
+      "title": "Out of Tokens",
+      "description": "A wry late-night guitar/electronic single about a creative session stopping when the tokens run out.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/cover-1-scaled.jpg",
+      "image_alt": "Out of Tokens cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Out-of-Tokens-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-02-05",
+      "duration_seconds": null,
+      "isrcs": [],
+      "upc": "700813524617",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/out-of-tokens"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 915,
+      "page_url": "https://kieransimkin.co.uk/headphones-on/",
+      "title": "Headphones On",
+      "description": "The official press page for Headphones On by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/cover-2-scaled.jpg",
+      "image_alt": "Headphones On cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Headphones-On-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-01-29",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT9XJ2663054"
+      ],
+      "upc": "700891793752",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/headphones-on"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 918,
+      "page_url": "https://kieransimkin.co.uk/singin-the-ai-blues/",
+      "title": "Singin' the AI blues",
+      "description": "A warm-to-cool electronic reflection on watching a once-distant idea—generative systems producing more lower-level code—arrive inside Kieran Simkin’s working life.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/cover-3-scaled.jpg",
+      "image_alt": "Singin' the AI blues cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Singin-the-AI-blues-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2027-01-22",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT9XJ2614980"
+      ],
+      "upc": "700904171805",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/singin-the-ai-blues"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    },
+    {
+      "post_id": 921,
+      "page_url": "https://kieransimkin.co.uk/excessive-stuffing/",
+      "title": "Excessive Stuffing",
+      "description": "The official press page for Excessive Stuffing by Kieran Simkin, with cover artwork, confirmed release information, platform links, catalogue identifiers and press material.",
+      "object_type": "music.song",
+      "image_url": "https://kieransimkin.co.uk/wp-content/uploads/2026/09/cover.png",
+      "image_alt": "Excessive Stuffing cover artwork",
+      "audio_urls": [
+        "https://kieransimkin.co.uk/wp-content/uploads/2026/09/Excessive-Stuffing-320kbps.mp3"
+      ],
+      "audio_local_paths": [],
+      "release_date": "2026-12-18",
+      "duration_seconds": null,
+      "isrcs": [
+        "QT9XM2659293"
+      ],
+      "upc": "700813090396",
+      "same_as": [
+        "https://distrokid.com/hyperfollow/kieransimkin/excessive-stuffing"
+      ],
+      "site_name": "Kieran Simkin",
+      "locale": "en_GB",
+      "artist": {
+        "name": "Kieran Simkin",
+        "url": "https://kieransimkin.co.uk/",
+        "same_as": [
+          "https://www.youtube.com/@TheSlinq",
+          "https://www.instagram.com/kieransimkin/"
+        ]
+      },
+      "audio_status": "existing-wordpress-media"
+    }
+  ],
+  "unresolved": [],
+  "waivers": [
+    {
+      "post_id": 300,
+      "reason": "user-authorised no-audio exception; verified source unavailable"
+    }
+  ]
+}
