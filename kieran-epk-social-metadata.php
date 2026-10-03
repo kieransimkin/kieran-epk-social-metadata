@@ -2,7 +2,8 @@
 /**
  * Plugin Name: Kieran EPK Social Metadata
  * Description: Adds one canonical set of per-page metadata and emits Open Graph, X/Twitter compatibility tags and Schema.org JSON-LD for EPK and project pages.
- * Version: 1.0.1
+ * Version: 1.1.0
+ * Requires PHP: 8.0
  * Author: Kieran Simkin
  * License: GPL-2.0-or-later
  */
@@ -11,9 +12,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.0.1');
+define('KSEM_VERSION', '1.1.0');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
+require_once KSEM_DIR . 'includes/video.php';
 
 /**
  * The editor stores each fact once. Network-specific tags are derived aliases,
@@ -21,7 +23,7 @@ define('KSEM_DIR', plugin_dir_path(__FILE__));
  */
 function ksem_meta_fields(): array
 {
-    return array(
+    return array_merge(ksem_video_fields(), array(
         '_ksem_enabled'          => 'boolean',
         '_ksem_title'            => 'string',
         '_ksem_description'      => 'string',
@@ -36,13 +38,16 @@ function ksem_meta_fields(): array
         '_ksem_same_as'          => 'string',
         '_ksem_site_name'        => 'string',
         '_ksem_locale'           => 'string',
-    );
+    ));
 }
 
 function ksem_register_meta(): void
 {
     foreach (ksem_meta_fields() as $key => $type) {
         $sanitize_callback = static function ($value) use ($key, $type) {
+            if (isset(ksem_video_fields()[$key])) {
+                return ksem_sanitize_video($key, $value);
+            }
             if ($type === 'integer') {
                 return absint($value);
             }
@@ -66,8 +71,8 @@ function ksem_register_meta(): void
             'single'            => true,
             'show_in_rest'      => true,
             'sanitize_callback' => $sanitize_callback,
-            'auth_callback'     => static function (): bool {
-                return current_user_can('edit_pages');
+            'auth_callback'     => static function ($allowed = false, $meta_key = '', $post_id = 0): bool {
+                return $post_id ? current_user_can('edit_post', (int) $post_id) : current_user_can('edit_pages');
             },
         ));
     }
@@ -172,7 +177,7 @@ function ksem_render_meta_box(WP_Post $post): void
             <td><input id="ksem-locale" name="ksem[locale]" type="text" value="<?php echo esc_attr(ksem_value($post->ID, '_ksem_locale', 'en_GB')); ?>"></td>
         </tr>
     </table>
-    <?php
+    <?php ksem_render_video_fields($post->ID);
 }
 
 function ksem_clean_url_lines(string $value): string
@@ -216,6 +221,7 @@ function ksem_save_meta_box(int $post_id, WP_Post $post): void
     update_post_meta($post_id, '_ksem_same_as', ksem_clean_url_lines((string) ($input['same_as'] ?? '')));
     update_post_meta($post_id, '_ksem_site_name', sanitize_text_field($input['site_name'] ?? 'Kieran Simkin'));
     update_post_meta($post_id, '_ksem_locale', sanitize_text_field($input['locale'] ?? 'en_GB'));
+    ksem_save_video($post_id, $input);
 }
 add_action('save_post_page', 'ksem_save_meta_box', 10, 2);
 
@@ -289,6 +295,9 @@ function ksem_output_metadata(): void
     $same_as = ksem_lines(ksem_value($post_id, '_ksem_same_as'));
     $site_name = ksem_value($post_id, '_ksem_site_name', 'Kieran Simkin');
     $locale = ksem_value($post_id, '_ksem_locale', 'en_GB');
+    $video = ksem_video_data($post_id);
+    $player = ksem_video_player_url($post_id, $video);
+    $player_card = ksem_video_player_ready($video, $player);
     $is_music = in_array($object_type, array('music.song', 'music.album'), true);
 
     echo "<!-- Kieran EPK Social Metadata " . esc_html(KSEM_VERSION) . " -->\n";
@@ -313,16 +322,23 @@ function ksem_output_metadata(): void
     if ($object_type === 'music.song' && $duration) {
         ksem_meta_tag('property', 'music:duration', (string) $duration);
     }
+    ksem_output_video_tags($video);
     if ($object_type === 'music.album' && $release_date !== '') {
         ksem_meta_tag('property', 'music:release_date', $release_date);
     }
 
     // X/Twitter uses its own names for the same canonical facts.
-    ksem_meta_tag('name', 'twitter:card', 'summary_large_image');
+    ksem_meta_tag('name', 'twitter:card', $player_card ? 'player' : 'summary_large_image');
     ksem_meta_tag('name', 'twitter:title', $title);
     ksem_meta_tag('name', 'twitter:description', $description);
-    ksem_meta_tag('name', 'twitter:image', $image['url']);
-    ksem_meta_tag('name', 'twitter:image:alt', $image['alt']);
+    ksem_meta_tag('name', 'twitter:image', $player_card ? $video['thumbnail_url'] : $image['url']);
+    ksem_meta_tag('name', 'twitter:image:alt', $player_card ? $video['name'] . ' video thumbnail' : $image['alt']);
+    if ($player_card) {
+        ksem_meta_tag('name', 'twitter:site', $video['x_site'] ?? '');
+        ksem_meta_tag('name', 'twitter:player', $player);
+        ksem_meta_tag('name', 'twitter:player:width', (string) $video['width']);
+        ksem_meta_tag('name', 'twitter:player:height', (string) $video['height']);
+    }
 
     $creator = array(
         '@type'  => $is_music ? 'MusicGroup' : 'Person',
@@ -372,10 +388,12 @@ function ksem_output_metadata(): void
     if ($is_music && $upc !== '') {
         $schema['identifier'] = array('@type' => 'PropertyValue', 'propertyID' => 'UPC', 'value' => $upc);
     }
+    $video_schema = ksem_video_schema($post_id, $video, $url);
+    if ($video_schema) { $schema['video'] = $video_schema; }
     $schema = array_filter($schema, static function ($value): bool {
         return !($value === '' || $value === array() || $value === null);
     });
-    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "</script>\n";
+    echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) . "</script>\n";
 }
 add_action('wp_head', 'ksem_output_metadata', 2);
 
@@ -436,6 +454,8 @@ function ksem_import_record(array $record): bool
     update_post_meta($post_id, '_ksem_same_as', ksem_clean_url_lines(implode("\n", $record['same_as'] ?? array())));
     update_post_meta($post_id, '_ksem_site_name', sanitize_text_field($record['site_name'] ?? 'Kieran Simkin'));
     update_post_meta($post_id, '_ksem_locale', sanitize_text_field($record['locale'] ?? 'en_GB'));
+    // A legacy catalogue must not erase video facts added after its capture.
+    if (array_key_exists('video_verified', $record)) { ksem_save_video($post_id, $record); }
     return true;
 }
 
