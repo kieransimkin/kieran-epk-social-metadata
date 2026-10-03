@@ -14,7 +14,10 @@ function get_queried_object_id() { return 839; }
 function get_the_title() { return "California Screamin’"; }
 function get_permalink() { return 'https://kieransimkin.co.uk/california-screamin/'; }
 function get_post_meta($post_id, $key, $single = false) {
-    $values = array(
+    global $test_meta_values;
+    return $test_meta_values[$key] ?? '';
+}
+$test_meta_values = array(
         '_ksem_enabled' => 1,
         '_ksem_title' => "California Screamin’",
         '_ksem_description' => 'Warm, cinematic pop/electro with laid-back South Coast UK-rap storytelling.',
@@ -30,8 +33,6 @@ function get_post_meta($post_id, $key, $single = false) {
         '_ksem_site_name' => 'Kieran Simkin',
         '_ksem_locale' => 'en_GB',
     );
-    return $values[$key] ?? '';
-}
 function attachment_url_to_postid() { return 42; }
 function wp_get_attachment_metadata() { return array('width' => 2400, 'height' => 2400); }
 function wp_check_filetype() { return array('type' => 'image/jpeg'); }
@@ -93,5 +94,33 @@ if (($schema['@type'] ?? '') !== 'MusicRecording'
     || ($schema['audio'][0]['duration'] ?? '') !== 'PT3M1S') {
     fwrite(STDERR, "JSON-LD values do not match the canonical fields.\n");
     exit(1);
+}
+
+$test_meta_values['_ksem_title'] = 'DanceFlow';
+$test_meta_values['_ksem_description'] = 'Open tools for music-responsive visual work.';
+$test_meta_values['_ksem_object_type'] = 'website';
+ob_start();
+ksem_output_metadata();
+$website_output = ob_get_clean();
+if (!preg_match('/<script type="application\/ld\+json">(.*?)<\/script>/s', $website_output, $website_match)) {
+    fwrite(STDERR, "Website JSON-LD block missing.\n");
+    exit(1);
+}
+$website_schema = json_decode($website_match[1], true, 512, JSON_THROW_ON_ERROR);
+if (($website_schema['@type'] ?? '') !== 'WebPage'
+    || ($website_schema['author']['@type'] ?? '') !== 'Person'
+    || isset($website_schema['byArtist'])
+    || isset($website_schema['audio'])
+    || isset($website_schema['isrcCode'])
+    || isset($website_schema['identifier'])
+    || isset($website_schema['datePublished'])) {
+    fwrite(STDERR, "Website JSON-LD contains music-specific values.\n");
+    exit(1);
+}
+foreach (array('property="og:audio"', 'property="og:audio:type"', 'property="music:duration"', 'property="music:release_date"') as $forbidden) {
+    if (strpos($website_output, $forbidden) !== false) {
+        fwrite(STDERR, "Website output contains music-specific Open Graph: {$forbidden}\n");
+        exit(1);
+    }
 }
 echo "Rendered metadata contract passed.\n";

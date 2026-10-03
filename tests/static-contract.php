@@ -10,6 +10,8 @@ $required = array(
     "'twitter:image:alt'",
     "'MusicRecording'",
     "'MusicAlbum'",
+    "'WebPage'",
+    "'Person'",
     "'isrcCode'",
     "'identifier'",
     "'datePublished'",

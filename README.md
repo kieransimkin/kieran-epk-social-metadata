@@ -5,13 +5,17 @@ Stores one canonical set of facts on each WordPress page and derives:
 - standard `description` metadata;
 - Open Graph core, image, audio and music-extension metadata;
 - X/Twitter summary-card compatibility aliases;
-- Schema.org `MusicRecording` or `MusicAlbum` JSON-LD.
+- Schema.org `MusicRecording`, `MusicAlbum` or `WebPage` JSON-LD, selected from the page object.
 
 The plugin deliberately does **not** create separate Facebook, LinkedIn,
 Instagram, TikTok or Pinterest editor fields. Facebook and LinkedIn consume the
 Open Graph values; Instagram and TikTok publish sharing APIs rather than an
 HTML-page metadata vocabulary; Pinterest has no music Rich Pin type. It also
 does not duplicate WordPress's document title, canonical link or robots tags.
+
+For a `General webpage`, the plugin keeps the shared description, Open Graph,
+X/Twitter and image fields, emits `WebPage` JSON-LD with a `Person` author, and
+omits music-only audio, release, ISRC, UPC and artist properties.
 
 ## Catalogue import
 

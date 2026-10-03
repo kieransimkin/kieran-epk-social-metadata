@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Kieran EPK Social Metadata
- * Description: Adds one canonical set of per-page music metadata and emits Open Graph, X/Twitter compatibility tags and Schema.org JSON-LD for EPK pages.
- * Version: 1.0.0
+ * Description: Adds one canonical set of per-page metadata and emits Open Graph, X/Twitter compatibility tags and Schema.org JSON-LD for EPK and project pages.
+ * Version: 1.0.1
  * Author: Kieran Simkin
  * License: GPL-2.0-or-later
  */
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.0.0');
+define('KSEM_VERSION', '1.0.1');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 
@@ -119,7 +119,7 @@ function ksem_render_meta_box(WP_Post $post): void
             <td><textarea class="widefat" id="ksem-description" name="ksem[description]" rows="4"><?php echo esc_textarea(ksem_value($post->ID, '_ksem_description')); ?></textarea></td>
         </tr>
         <tr>
-            <th scope="row"><label for="ksem-object-type">Music object</label></th>
+            <th scope="row"><label for="ksem-object-type">Page object</label></th>
             <td>
                 <select id="ksem-object-type" name="ksem[object_type]">
                     <option value="music.song" <?php selected($type, 'music.song'); ?>>Single recording</option>
@@ -289,6 +289,7 @@ function ksem_output_metadata(): void
     $same_as = ksem_lines(ksem_value($post_id, '_ksem_same_as'));
     $site_name = ksem_value($post_id, '_ksem_site_name', 'Kieran Simkin');
     $locale = ksem_value($post_id, '_ksem_locale', 'en_GB');
+    $is_music = in_array($object_type, array('music.song', 'music.album'), true);
 
     echo "<!-- Kieran EPK Social Metadata " . esc_html(KSEM_VERSION) . " -->\n";
     ksem_meta_tag('name', 'description', $description);
@@ -303,9 +304,11 @@ function ksem_output_metadata(): void
     ksem_meta_tag('property', 'og:image:width', $image['width'] ? (string) $image['width'] : '');
     ksem_meta_tag('property', 'og:image:height', $image['height'] ? (string) $image['height'] : '');
     ksem_meta_tag('property', 'og:image:alt', $image['alt']);
-    foreach ($audio_urls as $audio_url) {
-        ksem_meta_tag('property', 'og:audio', $audio_url);
-        ksem_meta_tag('property', 'og:audio:type', 'audio/mpeg');
+    if ($is_music) {
+        foreach ($audio_urls as $audio_url) {
+            ksem_meta_tag('property', 'og:audio', $audio_url);
+            ksem_meta_tag('property', 'og:audio:type', 'audio/mpeg');
+        }
     }
     if ($object_type === 'music.song' && $duration) {
         ksem_meta_tag('property', 'music:duration', (string) $duration);
@@ -321,8 +324,8 @@ function ksem_output_metadata(): void
     ksem_meta_tag('name', 'twitter:image', $image['url']);
     ksem_meta_tag('name', 'twitter:image:alt', $image['alt']);
 
-    $artist = array(
-        '@type'  => 'MusicGroup',
+    $creator = array(
+        '@type'  => $is_music ? 'MusicGroup' : 'Person',
         'name'   => 'Kieran Simkin',
         'url'    => 'https://kieransimkin.co.uk/',
         'sameAs' => array(
@@ -332,12 +335,13 @@ function ksem_output_metadata(): void
     );
     $schema = array(
         '@context'         => 'https://schema.org',
-        '@type'            => $object_type === 'music.album' ? 'MusicAlbum' : 'MusicRecording',
+        '@type'            => $object_type === 'website' ? 'WebPage' : ($object_type === 'music.album' ? 'MusicAlbum' : 'MusicRecording'),
         'name'             => $title,
         'description'      => $description,
         'url'              => $url,
         'mainEntityOfPage' => $url,
-        'byArtist'         => $artist,
+        'author'           => $object_type === 'website' ? $creator : null,
+        'byArtist'         => $is_music ? $creator : null,
         'image'            => array_filter(array(
             '@type'   => 'ImageObject',
             'url'     => $image['url'],
@@ -345,10 +349,10 @@ function ksem_output_metadata(): void
             'height'  => $image['height'] ?: null,
             'caption' => $image['alt'],
         )),
-        'datePublished'    => $release_date,
+        'datePublished'    => $is_music ? $release_date : '',
         'sameAs'           => $same_as,
     );
-    if ($audio_urls) {
+    if ($is_music && $audio_urls) {
         $schema['audio'] = array_map(static function (string $audio_url) use ($title, $duration): array {
             return array_filter(array(
                 '@type'          => 'AudioObject',
@@ -365,7 +369,7 @@ function ksem_output_metadata(): void
     if ($object_type === 'music.album' && $isrcs) {
         $schema['numTracks'] = count($isrcs);
     }
-    if ($upc !== '') {
+    if ($is_music && $upc !== '') {
         $schema['identifier'] = array('@type' => 'PropertyValue', 'propertyID' => 'UPC', 'value' => $upc);
     }
     $schema = array_filter($schema, static function ($value): bool {
