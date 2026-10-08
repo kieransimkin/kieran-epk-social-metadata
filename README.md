@@ -43,6 +43,8 @@ Tools → EPK metadata catalogue imports the bundled music facts only after its 
 
 ## Validation
 
+Build the production ZIP with `python tools/package.py`. Run `python tests/package-contract.py` to check reproducibility, exact source bytes and exclusion of development files. The directory readme and PHP version must match. See [WordPress.org publication](docs/wordpress-org.md) for the reviewed checker findings and directory process.
+
 Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php`, `tests/video-contract.php`, `tests/keyword-contract.php` and `tests/image-contract.php`. After installation, audit all EPK head fields and preserved bodies, check representative player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
 
 Licence: GPL-2.0-or-later.

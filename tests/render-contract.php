@@ -1,6 +1,7 @@
 <?php
 define('ABSPATH', __DIR__);
 class WP_Post {}
+function wp_strip_all_tags($value) { return strip_tags(preg_replace('~<(script|style)[^>]*>.*?</\1>~is', '', $value)); }
 function plugin_dir_path($file) { return dirname($file) . DIRECTORY_SEPARATOR; }
 function add_action() {}
 function add_filter() {}

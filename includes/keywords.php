@@ -1,4 +1,5 @@
 <?php
+if (!defined('ABSPATH')) { exit; }
 /** Optional descriptive keywords; no search-ranking claim or automatic import. */
 
 function ksem_clean_keywords($value): string
@@ -7,7 +8,7 @@ function ksem_clean_keywords($value): string
     $phrases = array();
     $seen = array();
     foreach (preg_split('/[,\r\n]+/u', (string) $value) ?: array() as $phrase) {
-        $phrase = sanitize_text_field(strip_tags($phrase));
+        $phrase = sanitize_text_field(wp_strip_all_tags($phrase));
         $phrase = preg_replace('/\s+/u', ' ', trim($phrase)) ?? '';
         if ($phrase === '' || preg_match_all('/./us', $phrase) > 100) { continue; }
         $key = function_exists('mb_strtolower') ? mb_strtolower($phrase, 'UTF-8') : strtolower($phrase);

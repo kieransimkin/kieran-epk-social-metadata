@@ -2,8 +2,11 @@
 /**
  * Plugin Name: Kieran EPK Social Metadata
  * Description: WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
- * Version: 1.2.1
+ * Version: 1.2.2
+ * Requires at least: 6.7
  * Requires PHP: 8.0
+ * Text Domain: kieran-epk-social-metadata
+ * License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * Plugin URI: https://kieransimkin.co.uk/danceflow/
  * Author URI: https://kieransimkin.co.uk/
  * Author: Kieran Simkin
@@ -14,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.2.1');
+define('KSEM_VERSION', '1.2.2');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';
@@ -506,7 +509,7 @@ function ksem_import_record(array $record): bool
 function ksem_handle_import(): void
 {
     if (!current_user_can('manage_options')) {
-        wp_die(esc_html__('You are not allowed to import this catalogue.', 'ksem'));
+        wp_die(esc_html__('You are not allowed to import this catalogue.', 'kieran-epk-social-metadata'));
     }
     check_admin_referer('ksem_import_catalogue');
     $seed = ksem_load_seed();

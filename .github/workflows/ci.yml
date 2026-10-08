@@ -1,0 +1,30 @@
+name: Validate production plugin
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+      - name: PHP contracts and production package
+        run: |
+          find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l
+          for test in tests/*-contract.php; do php "$test"; done
+          python tests/package-contract.py
+          python tools/package.py
+          mkdir build
+          python -c "import glob,zipfile; zipfile.ZipFile(glob.glob('dist/*.zip')[0]).extractall('build')"
+      - uses: WordPress/plugin-check-action@005058d6dbd2942b6a58610836b981c2ee3cc19d
+        with:
+          build-dir: build/kieran-epk-social-metadata
+          categories: plugin_repo
+          slug: kieran-epk-social-metadata
+          wp-version: '7.1.3'

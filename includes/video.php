@@ -1,5 +1,6 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
+if (!defined('ABSPATH')) { exit; }
 
 function ksem_video_definitions(): array
 {
@@ -61,7 +62,7 @@ function ksem_render_video_fields(int $post_id): void
             echo '<input id="ksem-' . esc_attr($name) . '" name="ksem[' . esc_attr($name) . ']" type="checkbox" value="1" ' . checked((bool) $value, true, false) . '>';
         } else {
             $input_type = $type === 'integer' ? 'number' : (substr($field, -4) === '_url' || $field === 'url' ? 'url' : 'text');
-            echo '<input class="widefat" id="ksem-' . esc_attr($name) . '" name="ksem[' . esc_attr($name) . ']" type="' . $input_type . '" ' . ($type === 'integer' ? 'min="0" ' : '') . 'value="' . esc_attr($value) . '">';
+            echo '<input class="widefat" id="ksem-' . esc_attr($name) . '" name="ksem[' . esc_attr($name) . ']" type="' . esc_attr($input_type) . '" ' . ($type === 'integer' ? 'min="0" ' : '') . 'value="' . esc_attr($value) . '">';
         }
         echo '</td></tr>';
     }
@@ -160,6 +161,8 @@ function ksem_serve_player(): void
     header('Content-Type: text/html; charset=UTF-8');
     header('X-Robots-Tag: noindex');
     header('Referrer-Policy: strict-origin-when-cross-origin');
+    // All dynamic player fields are escaped inside this dedicated HTML builder.
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Complete HTML document; escaping again would break the iframe/video player.
     echo ksem_native_player_html($video); exit;
 }
 add_action('template_redirect', 'ksem_serve_player', 0);
