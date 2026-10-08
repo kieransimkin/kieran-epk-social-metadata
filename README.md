@@ -16,7 +16,9 @@ References: [Google supported metadata](https://developers.google.com/search/doc
 
 Useful SEO information is already generated from canonical facts: unique description, OG title/description/image and applicable audio/video properties, X summary/player aliases, and music or webpage JSON-LD. WordPress owns the document title, canonical link, robots directives and sitemap. Avoid adding duplicate owners or invented network-specific tags. Unknown duration, video publication facts, account handles and audio remain unavailable rather than guessed.
 
-Tools → EPK keyword metadata imports the separately reviewed keyword seed only. It checks exact published IDs/permalinks, existing required facts, the seed hash and current keyword state; it writes only keyword metadata. A missing MP3 blocks ordinary pages. The seed records the existing explicitly authorised Edie Rose no-audio state for that named page alone. Activation performs no import. The legacy catalogue importer preserves keyword metadata if its seed omits that field.
+Tools → EPK keyword metadata imports the separately reviewed keyword seed. It checks exact published IDs/permalinks, existing required facts, the seed hash and current keyword state. It writes keywords plus any explicitly listed missing single-recording duration, supported by a dated browser-decoded observation of the exact sole MP3 URL. Durations are rounded to the nearest whole second; existing nonzero values and album or multiple-recording scopes are preserved. A missing MP3 blocks ordinary pages. The seed records the existing explicitly authorised Edie Rose no-audio state for that named page alone. Activation performs no import. The legacy catalogue importer preserves keyword metadata if its seed omits that field.
+
+When attachment metadata lacks artwork dimensions, the plugin reads the exact existing public-upload file through WordPress's image-size helper. It checks the configured uploads URL and resolved local path, rejects traversal or external sources, and performs no remote fetch or media edit. Existing known attachment dimensions remain authoritative.
 
 ## Public song videos
 
@@ -34,6 +36,6 @@ Tools → EPK metadata catalogue imports the bundled music facts only after its 
 
 ## Validation
 
-Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php`, `tests/video-contract.php` and `tests/keyword-contract.php`. After installation, audit all EPK head fields and preserved bodies, check representative player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
+Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php`, `tests/video-contract.php`, `tests/keyword-contract.php` and `tests/image-contract.php`. After installation, audit all EPK head fields and preserved bodies, check representative player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
 
 Licence: GPL-2.0-or-later.

@@ -260,7 +260,33 @@ function ksem_image_data(string $url, string $fallback_alt): array
     }
     $filetype = wp_check_filetype((string) wp_parse_url($url, PHP_URL_PATH));
     $data['type'] = (string) ($filetype['type'] ?? '');
+    if (!$data['width'] || !$data['height']) {
+        $dimensions = ksem_local_upload_dimensions($url);
+        if ($dimensions) {
+            $data['width'] = $dimensions[0];
+            $data['height'] = $dimensions[1];
+        }
+    }
     return $data;
+}
+
+/** Read the exact public upload locally when attachment metadata is unavailable. */
+function ksem_local_upload_dimensions(string $url): array
+{
+    if (!function_exists('wp_get_upload_dir') || !function_exists('wp_getimagesize')) { return array(); }
+    $uploads = wp_get_upload_dir();
+    if (!empty($uploads['error']) || empty($uploads['basedir']) || empty($uploads['baseurl'])) { return array(); }
+    $prefix = rtrim($uploads['baseurl'], '/') . '/';
+    $clean_url = preg_replace('/[?#].*$/', '', $url);
+    if (!is_string($clean_url) || !str_starts_with($clean_url, $prefix)) { return array(); }
+    $relative = rawurldecode(substr($clean_url, strlen($prefix)));
+    if ($relative === '' || str_contains($relative, "\0") || str_contains($relative, '\\')
+        || in_array('..', explode('/', $relative), true)) { return array(); }
+    $base = realpath($uploads['basedir']);
+    $path = $base ? realpath($base . DIRECTORY_SEPARATOR . $relative) : false;
+    if (!$path || !str_starts_with($path, $base . DIRECTORY_SEPARATOR) || !is_file($path) || !is_readable($path)) { return array(); }
+    $size = wp_getimagesize($path);
+    return is_array($size) && !empty($size[0]) && !empty($size[1]) ? array(absint($size[0]), absint($size[1])) : array();
 }
 
 function ksem_meta_tag(string $attribute, string $name, string $content): void

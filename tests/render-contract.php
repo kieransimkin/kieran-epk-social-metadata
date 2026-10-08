@@ -33,8 +33,8 @@ $test_meta_values = array(
         '_ksem_site_name' => 'Kieran Simkin',
         '_ksem_locale' => 'en_GB',
     );
-function attachment_url_to_postid() { return 42; }
-function wp_get_attachment_metadata() { return array('width' => 2400, 'height' => 2400); }
+function attachment_url_to_postid() { global $test_attachment_id; return $test_attachment_id ?? 42; }
+function wp_get_attachment_metadata() { global $test_attachment_metadata; return $test_attachment_metadata ?? array('width' => 2400, 'height' => 2400); }
 function wp_check_filetype() { return array('type' => 'image/jpeg'); }
 function wp_parse_url($url, $component) { return parse_url($url, $component); }
 function esc_attr($value) { return htmlspecialchars((string) $value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }

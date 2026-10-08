@@ -67,6 +67,25 @@ $reversed = $test_meta_values; $reversed['_ksem_keywords'] = '';
 check_keyword($reversed === $preserved, 'Other music/video facts changed');
 check_keyword(ksem_keyword_target_ready($record), 'Exact repeat is not idempotent');
 
+$duration_record = $record;
+$test_meta_values['_ksem_duration_seconds'] = 0;
+$duration_record['expected']['_ksem_duration_seconds'] = '0';
+$duration_record['expected']['_ksem_object_type'] = 'music.song';
+$duration_record['duration_update'] = array('seconds' => 181, 'observed_seconds' => 180.75, 'mp3_url' => $record['expected']['_ksem_audio_urls'], 'evidence_date' => $record['evidence_date'], 'source_scope' => 'browser-decoded public MP3');
+$keyword_writes = array(); $duration_before = $test_meta_values;
+check_keyword(ksem_import_keyword_record($duration_record), 'Evidenced missing duration import failed');
+check_keyword($keyword_writes === array(array(839, '_ksem_keywords', $record['keywords']), array(839, '_ksem_duration_seconds', 181)), 'Duration importer wrote another property');
+check_keyword(ksem_keyword_target_ready($duration_record), 'Duration repeat is not idempotent');
+$duration_after = $test_meta_values; $duration_after['_ksem_duration_seconds'] = 0;
+check_keyword($duration_after === $duration_before, 'Unrelated metadata changed with duration');
+$bad = $duration_record; $bad['duration_update']['mp3_url'] .= 'wrong'; check_keyword(!ksem_keyword_target_ready($bad), 'Duration transferred to another MP3');
+$bad = $duration_record; $bad['duration_update']['seconds'] = 180; check_keyword(!ksem_keyword_target_ready($bad), 'Unsupported rounding accepted');
+$bad = $duration_record; $bad['expected']['_ksem_object_type'] = 'music.album'; check_keyword(!ksem_keyword_target_ready($bad), 'One track duration applied to an album');
+$bad = $duration_record; $bad['expected']['_ksem_audio_urls'] .= "\nhttps://example.com/other.mp3"; check_keyword(!ksem_keyword_target_ready($bad), 'One duration applied to multiple recordings');
+$bad = $duration_record; $bad['expected']['_ksem_duration_seconds'] = '99'; check_keyword(!ksem_keyword_target_ready($bad), 'Existing verified duration replacement accepted');
+$test_meta_values['_ksem_duration_seconds'] = 123; check_keyword(!ksem_keyword_target_ready($duration_record), 'Concurrent duration change accepted');
+$test_meta_values['_ksem_duration_seconds'] = 181;
+
 $test_meta_values['_ksem_keywords'] = '';
 $test_meta_values['_ksem_audio_urls'] = ''; $record['expected']['_ksem_audio_urls'] = '';
 check_keyword(!ksem_keyword_target_ready($record), 'Missing ordinary audio accepted');

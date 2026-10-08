@@ -48,6 +48,18 @@ function ksem_keyword_record_ready(array $record): bool
     foreach (array('_ksem_title', '_ksem_description', '_ksem_image_url', '_ksem_image_alt', '_ksem_audio_urls') as $key) {
         if (!array_key_exists($key, $record['expected']) || !is_string($record['expected'][$key])) { return false; }
     }
+    if (array_key_exists('duration_update', $record)) {
+        $d = $record['duration_update'];
+        if (!is_array($d) || !is_int($d['seconds'] ?? null) || $d['seconds'] < 1 || $d['seconds'] > 86400
+            || !is_numeric($d['observed_seconds'] ?? null) || !is_finite((float) $d['observed_seconds'])
+            || (int) floor((float) $d['observed_seconds'] + 0.5) !== $d['seconds']
+            || ($d['source_scope'] ?? '') !== 'browser-decoded public MP3'
+            || ($record['expected']['_ksem_object_type'] ?? '') !== 'music.song'
+            || !is_string($record['expected']['_ksem_duration_seconds'] ?? null)
+            || !in_array($record['expected']['_ksem_duration_seconds'], array('', '0'), true)
+            || ksem_lines($record['expected']['_ksem_audio_urls']) !== array($d['mp3_url'] ?? '')
+            || ($d['evidence_date'] ?? '') !== $record['evidence_date']) { return false; }
+    }
     return true;
 }
 
@@ -60,8 +72,10 @@ function ksem_keyword_target_ready(array $record): bool
         || !empty($post->post_password) || !get_post_meta($post_id, '_ksem_enabled', true)
         || get_permalink($post_id) !== $record['page_url']) { return false; }
     foreach ($record['expected'] as $key => $value) {
-        if (!in_array($key, array('_ksem_title', '_ksem_description', '_ksem_image_url', '_ksem_image_alt', '_ksem_audio_urls'), true)
-            || ksem_value($post_id, $key) !== $value) { return false; }
+        $duration_repeat = $key === '_ksem_duration_seconds' && isset($record['duration_update'])
+            && ksem_value($post_id, $key) === (string) $record['duration_update']['seconds'];
+        if (!in_array($key, array('_ksem_title', '_ksem_description', '_ksem_image_url', '_ksem_image_alt', '_ksem_audio_urls', '_ksem_duration_seconds', '_ksem_object_type'), true)
+            || (ksem_value($post_id, $key) !== $value && !$duration_repeat)) { return false; }
     }
     foreach (array('_ksem_title', '_ksem_description', '_ksem_image_alt') as $key) {
         if (trim(ksem_value($post_id, $key)) === '') { return false; }
@@ -98,6 +112,10 @@ function ksem_import_keyword_record(array $record): bool
     if (!ksem_keyword_target_ready($record)) { return false; }
     $id = absint($record['post_id']);
     update_post_meta($id, '_ksem_keywords', $record['keywords']);
+    if (isset($record['duration_update'])) {
+        update_post_meta($id, '_ksem_duration_seconds', $record['duration_update']['seconds']);
+        if (ksem_value($id, '_ksem_duration_seconds') !== (string) $record['duration_update']['seconds']) { return false; }
+    }
     return ksem_value($id, '_ksem_keywords') === $record['keywords'];
 }
 
@@ -105,13 +123,13 @@ function ksem_keyword_import_page(): void
 {
     $seed = ksem_keyword_seed();
     $ready = ksem_keyword_import_ready($seed);
-    echo '<div class="wrap"><h1>EPK keyword metadata</h1><p>This import writes keyword phrases only. Google ignores the HTML keywords tag for ranking. Existing descriptions, titles, canonical URLs, artwork, audio, video fields, page bodies and motion remain untouched.</p>';
+    echo '<div class="wrap"><h1>EPK keyword metadata</h1><p>This import writes reviewed keyword phrases and separately evidenced missing single-recording durations. Google ignores the HTML keywords tag for ranking. Existing descriptions, titles, canonical URLs, artwork, audio URLs, video fields, page bodies and motion remain untouched.</p>';
     if (isset($_GET['ksem_keywords_imported'])) {
         echo '<div class="notice notice-info"><p>Keyword import attempted: ' . esc_html(absint($_GET['updated'] ?? 0)) . ' verified, ' . esc_html(absint($_GET['failed'] ?? 0)) . ' failed. Verify anonymous public metadata independently before reporting completion.</p></div>';
     }
-    echo '<p>Records: ' . esc_html(count($seed['records'] ?? array())) . '. State: ' . ($ready ? 'ready' : 'blocked: refresh exact targets, required facts or keywords') . '.</p><table class="widefat"><thead><tr><th>Song EPK</th><th>Keyword phrases</th><th>Evidence date</th></tr></thead><tbody>';
+    echo '<p>Records: ' . esc_html(count($seed['records'] ?? array())) . '. State: ' . ($ready ? 'ready' : 'blocked: refresh exact targets, required facts or keywords') . '.</p><table class="widefat"><thead><tr><th>Song EPK</th><th>Keyword phrases</th><th>Missing duration update</th><th>Evidence date</th></tr></thead><tbody>';
     foreach ($seed['records'] ?? array() as $r) {
-        echo '<tr><td>' . esc_html($r['song'] ?? '') . '</td><td>' . esc_html($r['keywords'] ?? '') . '</td><td>' . esc_html($r['evidence_date'] ?? '') . '</td></tr>';
+        echo '<tr><td>' . esc_html($r['song'] ?? '') . '</td><td>' . esc_html($r['keywords'] ?? '') . '</td><td>' . esc_html(isset($r['duration_update']) ? $r['duration_update']['seconds'] . ' seconds (exact public MP3)' : 'No duration change') . '</td><td>' . esc_html($r['evidence_date'] ?? '') . '</td></tr>';
     }
     echo '</tbody></table>';
     if ($ready) {
