@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kieran EPK Social Metadata
  * Description: WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
- * Version: 1.2.2
+ * Version: 1.2.3
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: kieran-epk-social-metadata
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.2.2');
+define('KSEM_VERSION', '1.2.3');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';
