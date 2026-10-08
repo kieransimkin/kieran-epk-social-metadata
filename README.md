@@ -1,5 +1,12 @@
 # Kieran EPK Social Metadata
 
+[![EPK Social Metadata logo](https://raw.githubusercontent.com/kieransimkin/kieran-epk-social-metadata/v1.2.1/docs/branding/logo.png)](https://kieransimkin.co.uk/danceflow/)
+
+By **[Kieran Simkin](https://kieransimkin.co.uk/)** · [DanceFlow ecosystem](https://kieransimkin.co.uk/danceflow/) · [Vector logo and usage guide](docs/branding/README.md).
+
+WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
+
+
 Store each page fact once and generate descriptions, Open Graph music/image/audio/video tags, X summary or player-card metadata, and Schema.org MusicRecording, MusicAlbum or WebPage JSON-LD.
 
 ## Install

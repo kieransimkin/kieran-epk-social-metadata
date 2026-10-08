@@ -1,9 +1,11 @@
 <?php
 /**
  * Plugin Name: Kieran EPK Social Metadata
- * Description: Adds one canonical set of per-page metadata and emits Open Graph, X/Twitter compatibility tags and Schema.org JSON-LD for EPK and project pages.
- * Version: 1.2.0
+ * Description: WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
+ * Version: 1.2.1
  * Requires PHP: 8.0
+ * Plugin URI: https://kieransimkin.co.uk/danceflow/
+ * Author URI: https://kieransimkin.co.uk/
  * Author: Kieran Simkin
  * License: GPL-2.0-or-later
  */
@@ -12,7 +14,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.2.0');
+define('KSEM_VERSION', '1.2.1');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';

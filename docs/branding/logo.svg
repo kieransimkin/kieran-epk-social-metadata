@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">EPK Social Metadata logo</title>
+  <desc id="desc">One canonical document branches into social metadata nodes. Original DanceFlow family mark by Kieran Simkin.</desc>
+  <rect x="3" y="3" width="122" height="122" rx="30" fill="#171124"/><rect x="8" y="8" width="112" height="112" rx="25" fill="none" stroke="#f5ce85" stroke-opacity=".35" stroke-width="1.5"/>
+  <g fill="none" stroke="#bff7df" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"><path d="M29 29h31l13 13v58H29zM60 29v15h13M39 58h21M39 72h13M39 86h14"/><path d="M73 64h13V44h10M86 64v22h10" stroke="#f5ce85"/><circle cx="99" cy="44" r="5" fill="#f5ce85" stroke="none"/><circle cx="99" cy="86" r="5" fill="#f5ce85" stroke="none"/></g>
+</svg>
