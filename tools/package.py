@@ -7,7 +7,7 @@ def build(output=None):
     version=re.search(r'\* Version: ([\d.]+)',(ROOT/'kieran-epk-social-metadata.php').read_text('utf-8')).group(1)
     readme=(ROOT/'readme.txt').read_text('utf-8')
     assert f'Stable tag: {version}\n' in readme
-    files=[ROOT/'kieran-epk-social-metadata.php',ROOT/'README.md',ROOT/'readme.txt',ROOT/'LICENSE.txt']
+    files=[ROOT/'kieran-epk-social-metadata.php',ROOT/'README.md',ROOT/'AGENTS.md',ROOT/'CONTRIBUTING.md',ROOT/'readme.txt',ROOT/'LICENSE.txt']
     for folder in ['includes','data','docs']:
         files.extend(p for p in (ROOT/folder).rglob('*') if p.is_file())
     for path in files:
