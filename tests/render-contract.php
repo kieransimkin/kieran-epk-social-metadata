@@ -12,7 +12,7 @@ function register_post_meta($post_type, $key, $args) {
 function is_singular($type) { return $type === 'page'; }
 function get_queried_object_id() { return 839; }
 function get_the_title() { return "California Screamin’"; }
-function get_permalink() { return 'https://kieransimkin.co.uk/california-screamin/'; }
+function get_permalink($id = 839) { global $test_permalinks; return $test_permalinks[$id] ?? 'https://kieransimkin.co.uk/california-screamin/'; }
 function get_post_meta($post_id, $key, $single = false) {
     global $test_meta_values;
     return $test_meta_values[$key] ?? '';

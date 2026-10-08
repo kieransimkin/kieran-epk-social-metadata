@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kieran EPK Social Metadata
  * Description: Adds one canonical set of per-page metadata and emits Open Graph, X/Twitter compatibility tags and Schema.org JSON-LD for EPK and project pages.
- * Version: 1.1.0
+ * Version: 1.2.0
  * Requires PHP: 8.0
  * Author: Kieran Simkin
  * License: GPL-2.0-or-later
@@ -12,10 +12,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.1.0');
+define('KSEM_VERSION', '1.2.0');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';
+require_once KSEM_DIR . 'includes/keywords.php';
 
 /**
  * The editor stores each fact once. Network-specific tags are derived aliases,
@@ -27,6 +28,7 @@ function ksem_meta_fields(): array
         '_ksem_enabled'          => 'boolean',
         '_ksem_title'            => 'string',
         '_ksem_description'      => 'string',
+        '_ksem_keywords'         => 'string',
         '_ksem_object_type'      => 'string',
         '_ksem_image_url'        => 'string',
         '_ksem_image_alt'        => 'string',
@@ -56,6 +58,9 @@ function ksem_register_meta(): void
             }
             if ($key === '_ksem_description') {
                 return sanitize_textarea_field($value);
+            }
+            if ($key === '_ksem_keywords') {
+                return ksem_clean_keywords($value);
             }
             if ($key === '_ksem_image_url') {
                 return esc_url_raw(trim((string) $value), array('https'));
@@ -177,6 +182,7 @@ function ksem_render_meta_box(WP_Post $post): void
             <td><input id="ksem-locale" name="ksem[locale]" type="text" value="<?php echo esc_attr(ksem_value($post->ID, '_ksem_locale', 'en_GB')); ?>"></td>
         </tr>
     </table>
+    <?php ksem_render_keyword_field($post->ID); ?>
     <?php ksem_render_video_fields($post->ID);
 }
 
@@ -208,6 +214,10 @@ function ksem_save_meta_box(int $post_id, WP_Post $post): void
     update_post_meta($post_id, '_ksem_enabled', isset($input['enabled']) ? 1 : 0);
     update_post_meta($post_id, '_ksem_title', sanitize_text_field($input['title'] ?? ''));
     update_post_meta($post_id, '_ksem_description', sanitize_textarea_field($input['description'] ?? ''));
+    // Preserve an existing keyword list when a legacy client omits the new field.
+    if (array_key_exists('keywords', $input)) {
+        update_post_meta($post_id, '_ksem_keywords', ksem_clean_keywords($input['keywords']));
+    }
 
     $type = sanitize_text_field($input['object_type'] ?? 'music.song');
     update_post_meta($post_id, '_ksem_object_type', in_array($type, array('music.song', 'music.album', 'website'), true) ? $type : 'music.song');
@@ -283,6 +293,7 @@ function ksem_output_metadata(): void
 
     $title = ksem_value($post_id, '_ksem_title', get_the_title($post_id));
     $description = ksem_value($post_id, '_ksem_description');
+    $keywords = ksem_clean_keywords(ksem_value($post_id, '_ksem_keywords'));
     $object_type = ksem_value($post_id, '_ksem_object_type', 'music.song');
     $url = get_permalink($post_id);
     $image_url = ksem_value($post_id, '_ksem_image_url');
@@ -302,6 +313,7 @@ function ksem_output_metadata(): void
 
     echo "<!-- Kieran EPK Social Metadata " . esc_html(KSEM_VERSION) . " -->\n";
     ksem_meta_tag('name', 'description', $description);
+    ksem_meta_tag('name', 'keywords', $keywords);
     ksem_meta_tag('property', 'og:title', $title);
     ksem_meta_tag('property', 'og:type', $object_type);
     ksem_meta_tag('property', 'og:url', $url);
@@ -354,6 +366,7 @@ function ksem_output_metadata(): void
         '@type'            => $object_type === 'website' ? 'WebPage' : ($object_type === 'music.album' ? 'MusicAlbum' : 'MusicRecording'),
         'name'             => $title,
         'description'      => $description,
+        'keywords'         => $keywords !== '' ? ksem_csv($keywords) : array(),
         'url'              => $url,
         'mainEntityOfPage' => $url,
         'author'           => $object_type === 'website' ? $creator : null,
@@ -443,6 +456,9 @@ function ksem_import_record(array $record): bool
     update_post_meta($post_id, '_ksem_enabled', 1);
     update_post_meta($post_id, '_ksem_title', sanitize_text_field($record['title'] ?? ''));
     update_post_meta($post_id, '_ksem_description', sanitize_textarea_field($record['description'] ?? ''));
+    if (array_key_exists('keywords', $record)) {
+        update_post_meta($post_id, '_ksem_keywords', ksem_clean_keywords($record['keywords']));
+    }
     update_post_meta($post_id, '_ksem_object_type', in_array($record['object_type'] ?? '', array('music.song', 'music.album', 'website'), true) ? $record['object_type'] : 'music.song');
     update_post_meta($post_id, '_ksem_image_url', esc_url_raw($record['image_url'] ?? '', array('https')));
     update_post_meta($post_id, '_ksem_image_alt', sanitize_text_field($record['image_alt'] ?? ''));

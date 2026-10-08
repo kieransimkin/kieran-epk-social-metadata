@@ -8,6 +8,16 @@ Requires WordPress with registered post-meta REST support and PHP 8.0 or later. 
 
 The plugin preserves WordPress document titles, canonical links and robots rules. General webpages use WebPage schema and omit music-only fields. No page bodies or templates are changed.
 
+## Descriptive keywords and SEO fields
+
+The optional Keyword phrases field stores one concise list, emitting a single HTML `keywords` tag and the same phrases in Schema.org `keywords`. It accepts up to eight comma- or newline-separated phrases, removes duplicates and markup, preserves UTF-8 and omits empty output. Google ignores the HTML keywords tag for indexing and ranking; descriptive keyword use does not demonstrate search demand or a ranking benefit.
+
+References: [Google supported metadata](https://developers.google.com/search/docs/crawling-indexing/special-tags) and [Schema.org keywords](https://schema.org/keywords).
+
+Useful SEO information is already generated from canonical facts: unique description, OG title/description/image and applicable audio/video properties, X summary/player aliases, and music or webpage JSON-LD. WordPress owns the document title, canonical link, robots directives and sitemap. Avoid adding duplicate owners or invented network-specific tags. Unknown duration, video publication facts, account handles and audio remain unavailable rather than guessed.
+
+Tools → EPK keyword metadata imports the separately reviewed keyword seed only. It checks exact published IDs/permalinks, existing required facts, the seed hash and current keyword state; it writes only keyword metadata. A missing MP3 blocks ordinary pages. The seed records the existing explicitly authorised Edie Rose no-audio state for that named page alone. Activation performs no import. The legacy catalogue importer preserves keyword metadata if its seed omits that field.
+
 ## Public song videos
 
 The Preferred public video fields store a verified watch/reference URL, iframe embed or direct MP4/WebM URL, title, description, video-specific thumbnail, ISO 8601 first-publication timestamp, duration, player dimensions and optional verified X account attribution. Leave fields blank for songs without a publicly available verified video. The verification checkbox controls output; player cards require a separate opt-in after playback checks.
@@ -24,6 +34,6 @@ Tools → EPK metadata catalogue imports the bundled music facts only after its 
 
 ## Validation
 
-Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php` and `tests/video-contract.php`. After installation, check public head output and player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
+Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php`, `tests/video-contract.php` and `tests/keyword-contract.php`. After installation, audit all EPK head fields and preserved bodies, check representative player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
 
 Licence: GPL-2.0-or-later.
