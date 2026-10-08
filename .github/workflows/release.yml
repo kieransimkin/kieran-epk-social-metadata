@@ -1,0 +1,85 @@
+name: Publish tested tagged plugin release
+on:
+  push:
+    tags: ['v*.*.*']
+permissions:
+  contents: read
+concurrency:
+  group: metadata-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+      - name: Verify source/tag identity, PHP contracts and deterministic package
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python -c "import os,re,pathlib; s=pathlib.Path('kieran-epk-social-metadata.php').read_text(); v=re.search(r'Version: ([0-9.]+)',s).group(1); assert os.environ['RELEASE_TAG']=='v'+v"
+          test "$(git rev-parse HEAD)" = "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")"
+          find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l
+          for test in tests/*-contract.php; do php "$test"; done
+          python tests/package-contract.py
+          python tools/package.py
+          python -c "import glob,zipfile; zipfile.ZipFile(glob.glob('dist/*.zip')[0]).extractall('build')"
+      - uses: WordPress/plugin-check-action@005058d6dbd2942b6a58610836b981c2ee3cc19d
+        with:
+          build-dir: build/kieran-epk-social-metadata
+          categories: plugin_repo
+          slug: kieran-epk-social-metadata
+          wp-version: '7.1.3'
+      - uses: actions/upload-artifact@v7
+        with:
+          name: tested-plugin
+          path: dist/*
+          if-no-files-found: error
+  github:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: tested-plugin
+          path: dist
+      - name: Publish and independently verify immutable packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+          gh release create "$RELEASE_TAG" dist/* --repo "$GITHUB_REPOSITORY" --verify-tag --title "EPK Social Metadata $RELEASE_TAG" --notes "Validated source: $GITHUB_SHA. PHP contracts, package reproducibility and Plugin Check passed. Website: https://kieransimkin.co.uk/danceflow/"
+          gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --dir downloaded
+          (cd downloaded && sha256sum --check SHA256SUMS.txt)
+  wordpress-org:
+    needs: github
+    if: vars.WPORG_PLUGIN_APPROVED == 'true'
+    runs-on: ubuntu-latest
+    environment: wordpress-org
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
+        with:
+          name: tested-plugin
+          path: dist
+      - name: Prepare the exact tested ZIP for approved directory updates
+        run: |
+          (cd dist && sha256sum --check SHA256SUMS.txt)
+          python -c "import glob,zipfile; zipfile.ZipFile(glob.glob('dist/*.zip')[0]).extractall('wordpress-build')"
+      - uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2
+        env:
+          SVN_USERNAME: ${{ secrets.WPORG_SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.WPORG_SVN_PASSWORD }}
+          SLUG: kieran-epk-social-metadata
+          BUILD_DIR: wordpress-build/kieran-epk-social-metadata
