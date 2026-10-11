@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Kieran EPK Social Metadata
  * Description: WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
- * Version: 1.2.3
+ * Version: 1.2.4
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: kieran-epk-social-metadata
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.2.3');
+define('KSEM_VERSION', '1.2.4');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';
@@ -215,7 +215,11 @@ function ksem_save_meta_box(int $post_id, WP_Post $post): void
         return;
     }
 
-    $input = wp_unslash($_POST['ksem']);
+    // Each whitelisted field has its own sanitizer below; generic text sanitation
+    // would strip percent-encoded bytes from valid media URLs. Nonce/capability
+    // checks above apply before input is inspected; nested field values are rejected.
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Field-specific sanitization follows, before every persistence call.
+    $input = array_filter(wp_unslash($_POST['ksem']), 'is_scalar');
     update_post_meta($post_id, '_ksem_enabled', isset($input['enabled']) ? 1 : 0);
     update_post_meta($post_id, '_ksem_title', sanitize_text_field($input['title'] ?? ''));
     update_post_meta($post_id, '_ksem_description', sanitize_textarea_field($input['description'] ?? ''));
@@ -533,6 +537,8 @@ function ksem_render_catalogue_page(): void
     $seed = ksem_load_seed();
     $ready = ksem_seed_is_ready($seed);
     $count = isset($seed['records']) && is_array($seed['records']) ? count($seed['records']) : 0;
+    // Read-only result notices; the catalogue import POST handler verifies its nonce.
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended
     $result = sanitize_text_field(wp_unslash($_GET['ksem_result'] ?? ''));
     ?>
     <div class="wrap">
@@ -554,6 +560,7 @@ function ksem_render_catalogue_page(): void
         <?php endif; ?>
     </div>
     <?php
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
 }
 
 function ksem_conflict_notice(): void

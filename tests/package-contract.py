@@ -12,5 +12,10 @@ with tempfile.TemporaryDirectory() as folder:
         assert not any('/tests/' in n or '/tools/' in n or '/.github/' in n for n in names)
         assert 'kieran-epk-social-metadata/readme.txt' in names
         assert 'kieran-epk-social-metadata/LICENSE.txt' in names
+        assert 'kieran-epk-social-metadata/AGENTS.md' not in names, 'Agent instructions stay in the source repository'
+        assert 'kieran-epk-social-metadata/assets/player.css' in names
+        for n in names:
+            if n.endswith('.php') and '/includes/' in n:
+                assert b'<style' not in z.read(n), 'Runtime CSS must use the WordPress style loader'
         for n in names: assert z.read(n)==(ROOT/n.removeprefix('kieran-epk-social-metadata/')).read_bytes()
 print('Production package boundaries, exact source bytes and reproducibility passed')

@@ -4,7 +4,7 @@ Tags: open graph, schema, music
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -42,6 +42,12 @@ No. The plugin is independent and does not require an external account.
 No. Search engines and sharing services decide how to present a page.
 
 == Changelog ==
+
+= 1.2.4 =
+
+* Load both isolated video-player variants through the WordPress stylesheet queue.
+* Preserve native controls, fullscreen iframe layout and visible keyboard focus.
+* Reject malformed nested editor fields and keep source-only agent instructions out of the ZIP.
 
 = 1.2.2 =
 

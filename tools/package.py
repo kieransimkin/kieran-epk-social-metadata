@@ -7,12 +7,12 @@ def build(output=None):
     version=re.search(r'\* Version: ([\d.]+)',(ROOT/'kieran-epk-social-metadata.php').read_text('utf-8')).group(1)
     readme=(ROOT/'readme.txt').read_text('utf-8')
     assert f'Stable tag: {version}\n' in readme
-    files=[ROOT/'kieran-epk-social-metadata.php',ROOT/'README.md',ROOT/'AGENTS.md',ROOT/'CONTRIBUTING.md',ROOT/'readme.txt',ROOT/'LICENSE.txt']
-    for folder in ['includes','data','docs']:
+    files=[ROOT/'kieran-epk-social-metadata.php',ROOT/'README.md',ROOT/'CONTRIBUTING.md',ROOT/'readme.txt',ROOT/'LICENSE.txt']
+    for folder in ['includes','data','docs','assets']:
         files.extend(p for p in (ROOT/folder).rglob('*') if p.is_file())
     for path in files:
         assert not path.is_symlink()
-        assert path.suffix in {'.php','.json','.md','.txt','.svg','.png'},path
+        assert path.suffix in {'.php','.json','.md','.txt','.svg','.png','.css'},path
     output=Path(output) if output else ROOT/'dist'/f'kieran-epk-social-metadata-{version}.zip'
     output.parent.mkdir(parents=True,exist_ok=True)
     assert not output.exists(),'Preserve existing package bytes; use a fresh output path'

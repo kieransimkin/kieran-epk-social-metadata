@@ -1,6 +1,5 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
-if (!defined('ABSPATH')) { exit; }
 
 function ksem_video_definitions(): array
 {
@@ -136,21 +135,30 @@ function ksem_video_schema(int $post_id, array $video, string $url): array
 
 function ksem_native_player_html(array $video): string
 {
+    // This isolated document prints only its own queued stylesheet, not theme assets.
+    // Use WordPress's style loader so filters, versioning and dependency handling apply.
+    wp_enqueue_style('ksem-player', plugins_url('assets/player.css', KSEM_FILE), array(), KSEM_VERSION);
+    ob_start();
+    wp_print_styles(array('ksem-player'));
+    $styles = ob_get_clean();
     if (empty($video['content_url']) && !empty($video['embed_url'])) {
         return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><meta name="referrer" content="strict-origin-when-cross-origin"><title>'
-            . esc_html($video['name']) . '</title><style>html,body{margin:0;height:100%;background:#000}iframe{display:block;border:0;width:100%;height:100%}</style></head><body><iframe src="'
+            . esc_html($video['name']) . '</title>' . $styles . '</head><body><iframe src="'
             . esc_attr($video['embed_url']) . '" title="' . esc_attr($video['name']) . '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></body></html>';
     }
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>'
-        . esc_html($video['name']) . '</title><style>html,body{margin:0;height:100%;background:#000}video{display:block;width:100%;height:100%;object-fit:contain}video:focus-visible{outline:3px solid white;outline-offset:-3px}</style></head><body><video controls playsinline preload="none" poster="'
+        . esc_html($video['name']) . '</title>' . $styles . '</head><body><video controls playsinline preload="none" poster="'
         . esc_attr($video['thumbnail_url']) . '" aria-label="' . esc_attr($video['name']) . '"><source src="'
         . esc_attr($video['content_url']) . '" type="' . esc_attr($video['mime_type']) . '"></video></body></html>';
 }
 
 function ksem_serve_player(): void
 {
+    // Public, read-only embed lookup; a nonce would prevent anonymous player cards.
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended
     if (!isset($_GET['ksem_player'])) { return; }
     $post_id = absint($_GET['ksem_player']);
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
     $post = get_post($post_id);
     $video = ksem_video_data($post_id);
     if (!$post instanceof WP_Post || $post->post_type !== 'page' || $post->post_status !== 'publish'
@@ -205,6 +213,8 @@ function ksem_video_import_page(): void
     $seed = ksem_video_seed();
     $ready = ksem_video_import_ready($seed);
     echo '<div class="wrap"><h1>EPK verified video references</h1><p>This import changes video metadata only. It preserves existing music metadata and page bodies. Songs without a verified video are excluded.</p>';
+    // Read-only result notice; the import POST handler verifies its nonce.
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended
     if (isset($_GET['ksem_video_imported'])) { echo '<div class="notice notice-success"><p>Verified video fields saved. Verify public output independently.</p></div>'; }
     echo '<p>Records: ' . count($seed['records'] ?? array()) . '. State: ' . ($ready ? 'ready' : 'blocked: inspect evidence, targets and required fields') . '.</p><table class="widefat"><thead><tr><th>Song EPK</th><th>Video</th><th>Evidence date</th></tr></thead><tbody>';
     foreach ($seed['records'] ?? array() as $r) {

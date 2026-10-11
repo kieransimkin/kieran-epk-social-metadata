@@ -1,5 +1,17 @@
 <?php
 require __DIR__ . '/render-contract.php';
+function plugins_url($path, $file) { return 'https://example.test/wp-content/plugins/kieran-epk-social-metadata/' . $path; }
+function wp_enqueue_style($handle, $src, $deps, $version) {
+    global $test_player_styles;
+    $test_player_styles[$handle] = array($src, $deps, $version);
+}
+function wp_print_styles($handles) {
+    global $test_player_styles;
+    foreach ($handles as $handle) {
+        $style = $test_player_styles[$handle];
+        echo '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . esc_attr($style[0] . '?ver=' . $style[2]) . '">';
+    }
+}
 function get_post_field($field, $id) { global $test_content; return $test_content ?? ''; }
 function update_post_meta($id, $key, $value) { global $test_meta_values; $test_meta_values[$key] = $value; }
 function home_url($path) { return 'https://kieransimkin.co.uk' . $path; }
@@ -53,9 +65,12 @@ assert_video(($schema['video']['contentUrl'] ?? '') === $encoded, 'Native video 
 $test_content = '<audio><source src="' . $encoded . '"></audio>';
 assert_video(!ksem_video_is_embedded(839, ksem_video_data(839)), 'Audio source claimed to be an embedded video');
 $html = ksem_native_player_html(ksem_video_data(839));
+assert_video(!str_contains($html, '<style') && str_contains($html, 'id="ksem-player-css"'), 'Native player bypassed the WordPress stylesheet queue');
+assert_video($test_player_styles['ksem-player'][1] === array() && $test_player_styles['ksem-player'][2] === KSEM_VERSION, 'Player style dependency/version contract failed');
 assert_video(str_contains($html, 'controls playsinline preload="none"') && !str_contains($html, ' autoplay'), 'Native player autoplay/control contract failed');
 assert_video(str_contains(ksem_video_player_url(839, ksem_video_data(839)), '?ksem_player=839'), 'Same-site iframe URL missing');
 $iframe_html = ksem_native_player_html(array_merge(ksem_video_data(839), array('content_url' => '', 'embed_url' => $record['video_embed_url'])));
+assert_video(!str_contains($iframe_html, '<style') && substr_count($iframe_html, 'id="ksem-player-css"') === 1, 'Iframe player bypassed or duplicated queued CSS');
 assert_video(str_contains($iframe_html, 'referrerpolicy="strict-origin-when-cross-origin"'), 'YouTube referrer contract missing');
 $test_meta_values['_ksem_enabled'] = 1;
 assert_video(ksem_sanitize_video('_ksem_video_x_site', '@valid_handle') === '@valid_handle', 'Valid X attribution rejected');

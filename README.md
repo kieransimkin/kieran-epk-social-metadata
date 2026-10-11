@@ -44,6 +44,8 @@ VideoObject is emitted only when the matching iframe/video is present in the sav
 
 The public HTTPS `?ksem_player=PAGE_ID` endpoint provides an iframe-compatible player for enabled published pages. It requires a verified source, title and thumbnail, excludes password-protected pages, does not autoplay, and preserves the referrer required by YouTube. Player card metadata requests a preview; X and other services decide whether to display it. Optional `@handle` attribution should be verified rather than guessed.
 
+Both player variants use the versioned `ksem-player` stylesheet through WordPress's enqueue and print APIs. Only that handle is printed in the isolated player document; theme assets and unrelated page queues are not injected. To verify an integration, open a configured `?ksem_player=PAGE_ID` route, check `ksem-player-css` and its versioned `assets/player.css` URL, and test native keyboard focus or the fullscreen iframe layout.
+
 Google generally expects a dedicated watch page for video-rich results. An EPK with a supporting video may remain a text result or appear in Google Images. No plugin can guarantee an image or a single-click player wherever a link appears.
 
 ## Imports

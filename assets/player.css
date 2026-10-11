@@ -1,0 +1,27 @@
+/* Only loaded by the isolated, non-autoplay ksem_player document. */
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background: #000;
+}
+
+iframe,
+video {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+video {
+    object-fit: contain;
+}
+
+video:focus-visible {
+    outline: 3px solid white;
+    outline-offset: -3px;
+}
