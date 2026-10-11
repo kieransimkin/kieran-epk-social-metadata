@@ -125,9 +125,12 @@ function ksem_keyword_import_page(): void
     $seed = ksem_keyword_seed();
     $ready = ksem_keyword_import_ready($seed);
     echo '<div class="wrap"><h1>EPK keyword metadata</h1><p>This import writes reviewed keyword phrases and separately evidenced missing single-recording durations. Google ignores the HTML keywords tag for ranking. Existing descriptions, titles, canonical URLs, artwork, audio URLs, video fields, page bodies and motion remain untouched.</p>';
+    // Read-only result notices: GET never starts an import; the POST handler verifies its nonce.
+    // phpcs:disable WordPress.Security.NonceVerification.Recommended
     if (isset($_GET['ksem_keywords_imported'])) {
         echo '<div class="notice notice-info"><p>Keyword import attempted: ' . esc_html(absint($_GET['updated'] ?? 0)) . ' verified, ' . esc_html(absint($_GET['failed'] ?? 0)) . ' failed. Verify anonymous public metadata independently before reporting completion.</p></div>';
     }
+    // phpcs:enable WordPress.Security.NonceVerification.Recommended
     echo '<p>Records: ' . esc_html(count($seed['records'] ?? array())) . '. State: ' . ($ready ? 'ready' : 'blocked: refresh exact targets, required facts or keywords') . '.</p><table class="widefat"><thead><tr><th>Song EPK</th><th>Keyword phrases</th><th>Missing duration update</th><th>Evidence date</th></tr></thead><tbody>';
     foreach ($seed['records'] ?? array() as $r) {
         echo '<tr><td>' . esc_html($r['song'] ?? '') . '</td><td>' . esc_html($r['keywords'] ?? '') . '</td><td>' . esc_html(isset($r['duration_update']) ? $r['duration_update']['seconds'] . ' seconds (exact public MP3)' : 'No duration change') . '</td><td>' . esc_html($r['evidence_date'] ?? '') . '</td></tr>';
