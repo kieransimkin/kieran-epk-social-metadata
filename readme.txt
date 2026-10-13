@@ -1,10 +1,10 @@
-=== Kieran EPK Social Metadata ===
+=== EPK Social Metadata ===
 Contributors: kieransimkin0
 Tags: open graph, schema, music
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -42,6 +42,11 @@ No. The plugin is independent and does not require an external account.
 No. Search engines and sharing services decide how to present a page.
 
 == Changelog ==
+
+= 1.2.5 =
+* Display the plugin as EPK Social Metadata while preserving the approved directory slug and upgrade identifiers.
+* Publish exact verified GitHub release bytes to WordPress.org after approval, including a first upload of an existing approved release.
+* Preserve runtime behaviour and add checksum, source, package-boundary and version validation for publication.
 
 = 1.2.4 =
 
