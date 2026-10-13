@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Kieran EPK Social Metadata
+ * Plugin Name: EPK Social Metadata
  * Description: WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON-LD. https://kieransimkin.co.uk/
- * Version: 1.2.4
+ * Version: 1.2.5
  * Requires at least: 6.7
  * Requires PHP: 8.0
  * Text Domain: kieran-epk-social-metadata
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('KSEM_VERSION', '1.2.4');
+define('KSEM_VERSION', '1.2.5');
 define('KSEM_FILE', __FILE__);
 define('KSEM_DIR', plugin_dir_path(__FILE__));
 require_once KSEM_DIR . 'includes/video.php';
@@ -346,7 +346,7 @@ function ksem_output_metadata(): void
     $player_card = ksem_video_player_ready($video, $player);
     $is_music = in_array($object_type, array('music.song', 'music.album'), true);
 
-    echo "<!-- Kieran EPK Social Metadata " . esc_html(KSEM_VERSION) . " -->\n";
+    echo "<!-- EPK Social Metadata " . esc_html(KSEM_VERSION) . " -->\n";
     ksem_meta_tag('name', 'description', $description);
     ksem_meta_tag('name', 'keywords', $keywords);
     ksem_meta_tag('property', 'og:title', $title);
@@ -569,7 +569,7 @@ function ksem_conflict_notice(): void
         return;
     }
     if (defined('WPSEO_VERSION') || defined('RANK_MATH_VERSION') || defined('AIOSEO_VERSION')) {
-        echo '<div class="notice notice-warning"><p><strong>Kieran EPK Social Metadata:</strong> another SEO/social metadata plugin is active. Disable its social output for EPK pages before enabling this plugin to avoid duplicate tags.</p></div>';
+        echo '<div class="notice notice-warning"><p><strong>EPK Social Metadata:</strong> another SEO/social metadata plugin is active. Disable its social output for EPK pages before enabling this plugin to avoid duplicate tags.</p></div>';
     }
 }
 add_action('admin_notices', 'ksem_conflict_notice');

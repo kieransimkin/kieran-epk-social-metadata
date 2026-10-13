@@ -13,3 +13,24 @@ On 8 October 2026 the official checker found missing directory readme fields and
 The complete player document escapes dynamic fields within its builder; escaping its return again would break its intended markup. This exception is annotated at the exact operation rather than hidden by broad exclusions.
 
 Read-only admin result notices and the public published-page player endpoint do not save data; requiring a user nonce would prevent public sharing services from reading the player. These exceptions are annotated only at the relevant reads, and must be re-reviewed whenever handlers change. Save/import handlers still verify nonces and permissions. The editor rejects nested values and sanitizes every field according to its type before storage, preserving percent-encoded media URLs and multiline descriptions. The array-level scanner cannot infer that field-specific sanitation; its narrow annotation explains the order instead of applying a URL-damaging generic sanitizer. Regression tests check nested-input rejection, encoded URLs and invalid-nonce rejection. `AGENTS.md` remains in the source repository but is not shipped as installed runtime content.
+
+## WordPress.org releases
+
+After directory approval, store `WPORG_SVN_USERNAME` and `WPORG_SVN_PASSWORD`
+in the repository's `wordpress-org` Actions environment, then set repository
+variable `WPORG_PLUGIN_APPROVED=true`. The password must be entered directly
+into GitHub's encrypted secret control; never put it in source or logs.
+WordPress.org uses a separate SVN password and requires two-factor authentication.
+
+`Publish verified WordPress.org release` automatically follows a successful
+tagged GitHub release. It downloads the existing published ZIP, verifies its
+checksum, GitHub digest, exact source tag and plugin/readme versions, rejects
+unsafe paths and development files, and passes those exact payload bytes to SVN.
+It serialises updates and retains `wordpress-publication.json` as CI evidence.
+
+For the first upload of an already approved version, run the same workflow from
+Actions with its existing tag, for example `v1.2.4`. This neither rebuilds the
+package nor overwrites an immutable GitHub release. The publication workflow
+runs from the default branch and uses an explicit version for SVN tagging.
+Never enable it before the directory has approved the assigned plugin slug.
+Verify the generated directory ZIP and page independently after publication.

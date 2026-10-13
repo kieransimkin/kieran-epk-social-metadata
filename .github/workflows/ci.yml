@@ -19,6 +19,7 @@ jobs:
           find . -name '*.php' -not -path './.git/*' -print0 | xargs -0 -n1 php -l
           for test in tests/*-contract.php; do php "$test"; done
           python tests/package-contract.py
+          python tests/wordpress-release-contract.py
           python tools/package.py
           mkdir build
           python -c "import glob,zipfile; zipfile.ZipFile(glob.glob('dist/*.zip')[0]).extractall('build')"

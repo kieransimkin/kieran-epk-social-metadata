@@ -1,4 +1,4 @@
-# Kieran EPK Social Metadata
+# EPK Social Metadata
 
 [![EPK Social Metadata logo](https://raw.githubusercontent.com/kieransimkin/kieran-epk-social-metadata/v1.2.1/docs/branding/logo.png)](https://kieransimkin.co.uk/danceflow/)
 
@@ -59,3 +59,27 @@ Build the production ZIP with `python tools/package.py`. Run `python tests/packa
 Run PHP lint, `tests/static-contract.php`, `tests/render-contract.php`, `tests/video-contract.php`, `tests/keyword-contract.php` and `tests/image-contract.php`. After installation, audit all EPK head fields and preserved bodies, check representative player playback, then use independent sharing checkers. Cached previews can lag a metadata change. Metadata validity does not prove search indexing, rich-result eligibility or social-player approval.
 
 Licence: GPL-2.0-or-later.
+
+## WordPress.org releases
+
+The public plugin name is **EPK Social Metadata**. The approved directory slug,
+PHP identifiers and upgrade path remain `kieran-epk-social-metadata`.
+
+After directory approval, store `WPORG_SVN_USERNAME` and `WPORG_SVN_PASSWORD`
+in the repository's `wordpress-org` Actions environment, then set repository
+variable `WPORG_PLUGIN_APPROVED=true`. The password must be entered directly
+into GitHub's encrypted secret control; never put it in source or logs.
+WordPress.org uses a separate SVN password and requires two-factor authentication.
+
+`Publish verified WordPress.org release` automatically follows a successful
+tagged GitHub release. It downloads the existing published ZIP, verifies its
+checksum, GitHub digest, exact source tag and plugin/readme versions, rejects
+unsafe paths and development files, and passes those exact payload bytes to SVN.
+It serialises updates and retains `wordpress-publication.json` as CI evidence.
+
+For the first upload of an already approved version, run the same workflow from
+Actions with its existing tag, for example `v1.2.4`. This neither rebuilds the
+package nor overwrites an immutable GitHub release. The publication workflow
+runs from the default branch and uses an explicit version for SVN tagging.
+Never enable it before the directory has approved the assigned plugin slug.
+Verify the generated directory ZIP and page independently after publication.
