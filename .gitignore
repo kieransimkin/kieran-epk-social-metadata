@@ -2,3 +2,6 @@ dist/
 build/
 __pycache__/
 *.pyc
+
+# Project-local model weights and caches
+models/

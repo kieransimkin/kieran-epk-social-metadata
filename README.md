@@ -9,14 +9,15 @@ WordPress EPK metadata for Open Graph, X cards and Schema.org music/webpage JSON
 
 Store each page fact once and generate descriptions, Open Graph music/image/audio/video tags, X summary or player-card metadata, and Schema.org MusicRecording, MusicAlbum or WebPage JSON-LD.
 
+## Before every new workflow
 
-## Agents and contributors
+Check the latest stable official release and the actual installed/imported version before starting; do not infer currency from a directory name or a development checkout. Read the current release notes, tagged capability documentation and relevant Potential problems. Use the [DanceFlow release preflight](https://github.com/kieransimkin/DanceFlow/blob/main/docs/workflows/release-preflight.md) and [complete capability references](https://github.com/kieransimkin/DanceFlow/blob/main/docs/capabilities/index.md).
 
-Agents using EPK Social Metadata should inspect its available capabilities, use them fully where they fit the task, and look for useful improvements wherever possible. When a required feature is missing, or a reusable reliability, usability, performance or documentation gap is found, improve this tool rather than maintaining a separate workaround. If no worthwhile change is justified, explain why.
+People and agents should consider the full ecosystem, use all capabilities that materially serve the task, compose supported files/APIs, and improve a demonstrated reusable gap in its canonical tool. Record why no worthwhile change is justified when that is the result. Keep independent tool identities, compatibility, source clocks, privacy, model/download costs and publication/deployment permissions intact. Store weights and model-specific caches in the owning project's ignored `models/`.
 
-Submit every improvement as a pull request to [kieran-epk-social-metadata](https://github.com/kieransimkin/kieran-epk-social-metadata/pulls), with relevant tests, documentation and a reproducible example. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) for the contribution and validation workflow.
+## Find your route
 
-Project website: [https://kieransimkin.co.uk/danceflow/](https://kieransimkin.co.uk/danceflow/).
+[Install](#install) · [Descriptive keywords and SEO fields](#descriptive-keywords-and-seo-fields) · [Public song videos](#public-song-videos) · [Imports](#imports) · [Validation](#validation) · [WordPress.org releases](#wordpressorg-releases) · [Agents and contributors](#agents-and-contributors)
 
 ## Install
 
@@ -83,3 +84,11 @@ package nor overwrites an immutable GitHub release. The publication workflow
 runs from the default branch and uses an explicit version for SVN tagging.
 Never enable it before the directory has approved the assigned plugin slug.
 Verify the generated directory ZIP and page independently after publication.
+
+## Agents and contributors
+
+Agents using EPK Social Metadata should inspect its available capabilities, use them fully where they fit the task, and look for useful improvements wherever possible. When a required feature is missing, or a reusable reliability, usability, performance or documentation gap is found, improve this tool rather than maintaining a separate workaround. If no worthwhile change is justified, explain why.
+
+Submit every improvement as a pull request to [kieran-epk-social-metadata](https://github.com/kieransimkin/kieran-epk-social-metadata/pulls), with relevant tests, documentation and a reproducible example. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) for the contribution and validation workflow.
+
+Project website: [https://kieransimkin.co.uk/danceflow/](https://kieransimkin.co.uk/danceflow/).
