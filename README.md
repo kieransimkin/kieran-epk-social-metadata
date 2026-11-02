@@ -92,3 +92,12 @@ Agents using EPK Social Metadata should inspect its available capabilities, use 
 Submit every improvement as a pull request to [kieran-epk-social-metadata](https://github.com/kieransimkin/kieran-epk-social-metadata/pulls), with relevant tests, documentation and a reproducible example. Follow [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) for the contribution and validation workflow.
 
 Project website: [https://kieransimkin.co.uk/danceflow/](https://kieransimkin.co.uk/danceflow/).
+
+## Cross-platform repository bytes
+
+The root `.gitattributes` stores and checks out text as LF on every platform;
+declared binary media, archives, fonts and native libraries remain byte-exact.
+Release and package hashes therefore do not depend on `core.autocrlf`.
+
+This repository-byte policy has no interface whose screenshot or video would add
+verification value. `git ls-files --eol`, package checks and CI are the evidence.
