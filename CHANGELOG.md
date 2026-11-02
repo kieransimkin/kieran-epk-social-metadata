@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.6 - 2026-11-02
+
+- Normalize Git text to LF for deterministic Windows/Linux source and plugin package hashes.
+
 ## 1.2.4 - 2026-10-11
 
 - Replace directly printed player CSS with a versioned stylesheet loaded through `wp_enqueue_style()` and `wp_print_styles()` for both iframe and native video routes.

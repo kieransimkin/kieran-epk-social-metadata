@@ -1,8 +1,9 @@
 from pathlib import Path
-import importlib.util, tempfile, zipfile, hashlib
+import importlib.util, zipfile, hashlib
+from temp_support import project_temporary_directory
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('package',ROOT/'tools/package.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
-with tempfile.TemporaryDirectory() as folder:
+with project_temporary_directory() as folder:
     one=module.build(Path(folder)/'one.zip');two=module.build(Path(folder)/'two.zip')
     assert one.read_bytes()==two.read_bytes()
     with zipfile.ZipFile(one) as z:
