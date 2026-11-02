@@ -5,9 +5,10 @@ import io
 import json
 from pathlib import Path
 import stat
-import tempfile
 import unittest
 import zipfile
+
+from temp_support import project_temporary_directory
 
 spec = importlib.util.spec_from_file_location("stager", Path(__file__).parents[1]/"tools/stage-wordpress-release.py")
 stager = importlib.util.module_from_spec(spec)
@@ -52,7 +53,7 @@ def fetcher(data, checksum=None):
 class Contracts(unittest.TestCase):
     def test_existing_release_retains_exact_payload_and_identified_source(self):
         data = package()
-        with tempfile.TemporaryDirectory() as folder:
+        with project_temporary_directory() as folder:
             output = Path(folder)/"stage"
             result = stager.stage("v1.2.4", output, fetcher(data))
             self.assertEqual(result["source"], "a"*40)
@@ -63,7 +64,7 @@ class Contracts(unittest.TestCase):
                 stager.stage("v1.2.4", output, fetcher(data))
 
     def test_changed_release_bytes_do_not_create_staging(self):
-        with tempfile.TemporaryDirectory() as folder:
+        with project_temporary_directory() as folder:
             output = Path(folder)/"stage"
             with self.assertRaisesRegex(ValueError, "checksum"):
                 stager.stage("v1.2.4", output, fetcher(package(), "0"*64))
